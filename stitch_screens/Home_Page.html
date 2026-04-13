@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AdviceFlow - Your Daily Dose of Clarity</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AdviceFlow - Your Daily Dose of Clarity</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -81,192 +89,250 @@
             },
         }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .ease-out-quint {
             transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
         }
     </style>
 </head>
+
 <body class="bg-background text-on-surface font-body selection:bg-primary/30 selection:text-primary">
-<!-- Top Navigation Shell -->
-<header class="bg-[#0f1930]/60 backdrop-blur-3xl sticky top-0 z-50 shadow-[0_0_40px_rgba(0,0,0,0.4)]">
-<nav class="flex justify-between items-center w-full px-12 py-6 max-w-screen-2xl mx-auto">
-<div class="text-2xl font-black tracking-tighter text-[#dee5ff] font-manrope">AdviceFlow</div>
-<div class="hidden md:flex items-center gap-8 font-manrope tracking-tight text-sm uppercase">
-<a class="text-[#bd9dff] border-b-2 border-[#bd9dff] pb-1 hover:scale-[1.02] duration-300 ease-out-quint" href="/">Home</a>
-<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors hover:scale-[1.02] duration-300 ease-out-quint" href="/search">Search</a>
-<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors hover:scale-[1.02] duration-300 ease-out-quint" href="/favorites">Favorites</a>
-<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors hover:scale-[1.02] duration-300 ease-out-quint" href="/about">About</a>
-<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors hover:scale-[1.02] duration-300 ease-out-quint" href="/settings">Settings</a>
-</div>
-<div class="flex items-center gap-6">
-<button class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors scale-95 transition-transform duration-200">
-<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<button class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors scale-95 transition-transform duration-200">
-<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
-</button>
-</div>
-</nav>
-</header>
-<main class="relative overflow-hidden min-h-screen">
-<!-- Background Ambient Elements -->
-<div class="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
-<div class="absolute top-[10%] left-[5%] w-64 h-64 bg-primary/10 blur-[120px] rounded-full"></div>
-<div class="absolute bottom-[20%] right-[10%] w-96 h-96 bg-secondary/10 blur-[150px] rounded-full"></div>
-</div>
-<div class="max-w-screen-2xl mx-auto px-12 pt-20 pb-32 grid lg:grid-cols-12 gap-16 items-start">
-<!-- Left Content Area (Hero & Main Card) -->
-<section class="lg:col-span-8 flex flex-col gap-16">
-<div class="max-w-3xl">
-<h1 class="font-headline text-6xl font-extrabold tracking-tight text-on-surface leading-[1.1] mb-6">
-                        Your Daily Dose of <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-secondary">Clarity</span>.
+    <!-- Top Navigation Shell -->
+    <header class="bg-[#0f1930]/60 backdrop-blur-3xl sticky top-0 z-50 shadow-[0_0_40px_rgba(0,0,0,0.4)]">
+        <nav class="flex justify-between items-center w-full px-12 py-6 max-w-screen-2xl mx-auto">
+            <div class="text-2xl font-black tracking-tighter text-[#dee5ff] font-manrope">AdviceFlow</div>
+            <div class="hidden md:flex items-center gap-8 font-manrope tracking-tight text-sm uppercase">
+                <a class="text-[#bd9dff] border-b-2 border-[#bd9dff] pb-1 hover:scale-[1.02] duration-300 ease-out-quint"
+                    href="/">Home</a>
+                <a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors hover:scale-[1.02] duration-300 ease-out-quint"
+                    href="/search">Search</a>
+                <a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors hover:scale-[1.02] duration-300 ease-out-quint"
+                    href="/favorites">Favorites</a>
+                <a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors hover:scale-[1.02] duration-300 ease-out-quint"
+                    href="/about">About</a>
+                <a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors hover:scale-[1.02] duration-300 ease-out-quint"
+                    href="/settings">Settings</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <button
+                    class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors scale-95 transition-transform duration-200">
+                    <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                </button>
+                <button
+                    class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors scale-95 transition-transform duration-200">
+                    <span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main class="relative overflow-hidden min-h-screen">
+        <!-- Background Ambient Elements -->
+        <div class="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
+            <div class="absolute top-[10%] left-[5%] w-64 h-64 bg-primary/10 blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-[20%] right-[10%] w-96 h-96 bg-secondary/10 blur-[150px] rounded-full"></div>
+        </div>
+        <div class="max-w-screen-2xl mx-auto px-12 pt-20 pb-32 grid lg:grid-cols-12 gap-16 items-start">
+            <!-- Left Content Area (Hero & Main Card) -->
+            <section class="lg:col-span-8 flex flex-col gap-16">
+                <div class="max-w-3xl">
+                    <h1 class="font-headline text-6xl font-extrabold tracking-tight text-on-surface leading-[1.1] mb-6">
+                        Your Daily Dose of <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-secondary p-4">Clarity
+                        </span>.
                     </h1>
-<p class="text-xl text-on-surface-variant font-body leading-relaxed">
-                        Curating the web's most insightful wisdom to help you navigate life's complexities with perspective and calm.
+                    <p class="text-xl text-on-surface-variant font-body leading-relaxed">
+                        Curating the web's most insightful wisdom to help you navigate life's complexities with
+                        perspective and calm.
                     </p>
-</div>
-<!-- Main Premium Advice Card -->
-<div class="group relative">
-<!-- Glass Container -->
-<div class="bg-surface-container/70 backdrop-blur-[24px] rounded-xl p-12 relative overflow-hidden shadow-2xl border border-outline-variant/15 hover:bg-surface-bright transition-colors duration-500 ease-out-quint">
-<!-- Soul Gradient -->
-<div class="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-primary/10 to-transparent pointer-events-none"></div>
-<div class="relative z-10 flex flex-col gap-10">
-<!-- Skeleton Loader (simulated) -->
-<div class="flex flex-col gap-4">
-<div class="flex gap-2">
-<span class="material-symbols-outlined text-primary text-4xl" data-icon="format_quote">format_quote</span>
-</div>
-<h2 class="text-3xl md:text-4xl font-headline font-bold leading-snug text-on-surface">
+                </div>
+                <!-- Main Premium Advice Card -->
+                <div class="group relative">
+                    <!-- Glass Container -->
+                    <div
+                        class="bg-surface-container/70 backdrop-blur-[24px] rounded-xl p-12 relative overflow-hidden shadow-2xl border border-outline-variant/15 hover:bg-surface-bright transition-colors duration-500 ease-out-quint">
+                        <!-- Soul Gradient -->
+                        <div
+                            class="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-primary/10 to-transparent pointer-events-none">
+                        </div>
+                        <div class="relative z-10 flex flex-col gap-10">
+                            <!-- Skeleton Loader (simulated) -->
+                            <div class="flex flex-col gap-4">
+                                <div class="flex gap-2">
+                                    <span class="material-symbols-outlined text-primary text-4xl"
+                                        data-icon="format_quote">format_quote</span>
+                                </div>
+                                <h2 class="text-3xl md:text-4xl font-headline font-bold leading-snug text-on-surface">
                                     Don't judge each day by the harvest you reap but by the seeds that you plant.
                                 </h2>
-</div>
-<!-- Interaction Bar -->
-<div class="flex flex-wrap items-center justify-between gap-6 pt-8 border-t border-outline-variant/15">
-<button class="bg-primary-container text-on-primary font-bold px-8 py-4 rounded-full flex items-center gap-3 hover:scale-105 active:scale-95 transition-all shadow-[0_0_15px_rgba(189,157,255,0.2)]">
-<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+                            </div>
+                            <!-- Interaction Bar -->
+                            <div
+                                class="flex flex-wrap items-center justify-between gap-6 pt-8 border-t border-outline-variant/15">
+                                <button
+                                    class="bg-primary-container text-on-primary font-bold px-8 py-4 rounded-full flex items-center gap-3 hover:scale-105 active:scale-95 transition-all shadow-[0_0_15px_rgba(189,157,255,0.2)]">
+                                    <span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
                                     Get New Advice
                                 </button>
-<div class="flex items-center gap-4">
-<button class="w-14 h-14 rounded-full border border-outline-variant/20 flex items-center justify-center hover:bg-surface-container-high transition-colors group/btn">
-<span class="material-symbols-outlined text-on-surface-variant group-hover/btn:text-on-surface" data-icon="content_copy">content_copy</span>
-</button>
-<button class="w-14 h-14 rounded-full border border-outline-variant/20 flex items-center justify-center hover:bg-surface-container-high transition-colors group/btn">
-<span class="material-symbols-outlined text-on-surface-variant group-hover/btn:text-on-surface" data-icon="share">share</span>
-</button>
-<button class="w-14 h-14 rounded-full border border-outline-variant/20 flex items-center justify-center hover:bg-surface-container-high transition-colors group/btn">
-<span class="material-symbols-outlined text-on-surface-variant group-hover/btn:text-on-surface" data-icon="favorite">favorite</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- CTA Bento Section -->
-<div class="grid md:grid-cols-2 gap-8">
-<a class="group bg-surface-container-low rounded-lg p-8 flex items-center justify-between hover:bg-surface-container-high transition-all duration-300" href="/search">
-<div>
-<h3 class="font-headline text-xl font-bold mb-2">Explore the Archive</h3>
-<p class="text-on-surface-variant text-sm">Search through thousands of curated insights.</p>
-</div>
-<span class="material-symbols-outlined text-secondary text-3xl group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
-</a>
-<a class="group bg-surface-container-low rounded-lg p-8 flex items-center justify-between hover:bg-surface-container-high transition-all duration-300" href="/favorites">
-<div>
-<h3 class="font-headline text-xl font-bold mb-2">Your Saved Wisdom</h3>
-<p class="text-on-surface-variant text-sm">Return to the advice that resonates most.</p>
-</div>
-<span class="material-symbols-outlined text-tertiary text-3xl group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
-</a>
-</div>
-</section>
-<!-- Right Side (Daily Wisdom Widget) -->
-<aside class="lg:col-span-4 flex flex-col gap-8 sticky top-32">
-<div class="bg-surface-container-low rounded-lg p-8 border border-outline-variant/10">
-<div class="flex items-center gap-4 mb-8">
-<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary" data-icon="lightbulb">lightbulb</span>
-</div>
-<div>
-<h4 class="font-headline font-bold text-lg">Daily Wisdom</h4>
-<p class="text-xs text-on-surface-variant font-medium">The Digital Obsidian Insights</p>
-</div>
-</div>
-<div class="space-y-6">
-<div class="p-4 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer group">
-<span class="text-[10px] uppercase tracking-widest text-secondary font-bold mb-2 block">Mindset</span>
-<p class="text-sm font-medium leading-relaxed mb-3 group-hover:text-on-surface transition-colors">How to maintain focus in a world of infinite noise.</p>
-<div class="flex items-center gap-2 text-[10px] text-on-surface-variant">
-<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span>
+                                <div class="flex items-center gap-4">
+                                    <button
+                                        class="w-14 h-14 rounded-full border border-outline-variant/20 flex items-center justify-center hover:bg-surface-container-high transition-colors group/btn">
+                                        <span
+                                            class="material-symbols-outlined text-on-surface-variant group-hover/btn:text-on-surface"
+                                            data-icon="content_copy">content_copy</span>
+                                    </button>
+                                    <button
+                                        class="w-14 h-14 rounded-full border border-outline-variant/20 flex items-center justify-center hover:bg-surface-container-high transition-colors group/btn">
+                                        <span
+                                            class="material-symbols-outlined text-on-surface-variant group-hover/btn:text-on-surface"
+                                            data-icon="share">share</span>
+                                    </button>
+                                    <button
+                                        class="w-14 h-14 rounded-full border border-outline-variant/20 flex items-center justify-center hover:bg-surface-container-high transition-colors group/btn">
+                                        <span
+                                            class="material-symbols-outlined text-on-surface-variant group-hover/btn:text-on-surface"
+                                            data-icon="favorite">favorite</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- CTA Bento Section -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <a class="group bg-surface-container-low rounded-lg p-8 flex items-center justify-between hover:bg-surface-container-high transition-all duration-300"
+                        href="/search">
+                        <div>
+                            <h3 class="font-headline text-xl font-bold mb-2">Explore the Archive</h3>
+                            <p class="text-on-surface-variant text-sm">Search through thousands of curated insights.</p>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-secondary text-3xl group-hover:translate-x-2 transition-transform"
+                            data-icon="arrow_forward">arrow_forward</span>
+                    </a>
+                    <a class="group bg-surface-container-low rounded-lg p-8 flex items-center justify-between hover:bg-surface-container-high transition-all duration-300"
+                        href="/favorites">
+                        <div>
+                            <h3 class="font-headline text-xl font-bold mb-2">Your Saved Wisdom</h3>
+                            <p class="text-on-surface-variant text-sm">Return to the advice that resonates most.</p>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-tertiary text-3xl group-hover:translate-x-2 transition-transform"
+                            data-icon="arrow_forward">arrow_forward</span>
+                    </a>
+                </div>
+            </section>
+            <!-- Right Side (Daily Wisdom Widget) -->
+            <aside class="lg:col-span-4 flex flex-col gap-8 sticky top-32">
+                <div class="bg-surface-container-low rounded-lg p-8 border border-outline-variant/10">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary" data-icon="lightbulb">lightbulb</span>
+                        </div>
+                        <div>
+                            <h4 class="font-headline font-bold text-lg">Daily Wisdom</h4>
+                            <p class="text-xs text-on-surface-variant font-medium">The Digital Obsidian Insights</p>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div
+                            class="p-4 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer group">
+                            <span
+                                class="text-[10px] uppercase tracking-widest text-secondary font-bold mb-2 block">Mindset</span>
+                            <p
+                                class="text-sm font-medium leading-relaxed mb-3 group-hover:text-on-surface transition-colors">
+                                How to maintain focus in a world of infinite noise.</p>
+                            <div class="flex items-center gap-2 text-[10px] text-on-surface-variant">
+                                <span class="material-symbols-outlined text-xs"
+                                    data-icon="trending_up">trending_up</span>
                                 1.2k readers
                             </div>
-</div>
-<div class="p-4 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer group">
-<span class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2 block">Productivity</span>
-<p class="text-sm font-medium leading-relaxed mb-3 group-hover:text-on-surface transition-colors">The art of saying 'no' to good things to say 'yes' to great things.</p>
-<div class="flex items-center gap-2 text-[10px] text-on-surface-variant">
-<span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span>
+                        </div>
+                        <div
+                            class="p-4 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer group">
+                            <span
+                                class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2 block">Productivity</span>
+                            <p
+                                class="text-sm font-medium leading-relaxed mb-3 group-hover:text-on-surface transition-colors">
+                                The art of saying 'no' to good things to say 'yes' to great things.</p>
+                            <div class="flex items-center gap-2 text-[10px] text-on-surface-variant">
+                                <span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span>
                                 5 min read
                             </div>
-</div>
-<div class="p-4 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer group">
-<span class="text-[10px] uppercase tracking-widest text-tertiary font-bold mb-2 block">Philosophy</span>
-<p class="text-sm font-medium leading-relaxed mb-3 group-hover:text-on-surface transition-colors">Stoicism for the digital age: Navigating modern stress.</p>
-<div class="flex items-center gap-2 text-[10px] text-on-surface-variant">
-<span class="material-symbols-outlined text-xs" data-icon="bookmark">bookmark</span>
+                        </div>
+                        <div
+                            class="p-4 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer group">
+                            <span
+                                class="text-[10px] uppercase tracking-widest text-tertiary font-bold mb-2 block">Philosophy</span>
+                            <p
+                                class="text-sm font-medium leading-relaxed mb-3 group-hover:text-on-surface transition-colors">
+                                Stoicism for the digital age: Navigating modern stress.</p>
+                            <div class="flex items-center gap-2 text-[10px] text-on-surface-variant">
+                                <span class="material-symbols-outlined text-xs" data-icon="bookmark">bookmark</span>
                                 Featured
                             </div>
-</div>
-</div>
-<button class="w-full mt-8 py-4 text-sm font-bold text-on-surface-variant hover:text-on-surface border border-outline-variant/20 rounded-full transition-all">
+                        </div>
+                    </div>
+                    <button
+                        class="w-full mt-8 py-4 text-sm font-bold text-on-surface-variant hover:text-on-surface border border-outline-variant/20 rounded-full transition-all">
                         View All Insights
                     </button>
-</div>
-<!-- Small Visual Card -->
-<div class="relative h-48 rounded-lg overflow-hidden group">
-<img alt="Scenic mountain landscape" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="dramatic aerial view of mountain peaks at sunrise with deep purple and blue mist filling valleys" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW-ejxrNo-tmbEnZ98Xz73iXM5s4hMV21tyTTwE0mkf_Xib30gHQwamjoKq0qajB_bNpi2y-ViVXMJu-cDbKpNtPJL5IzHOxFfBgS3scHIA9uhgdo9cTfq_4Wm00NWuoMPHaOXvkceS9z5ZYKngFVR6xX4ybRoy6EILlvx079UASjkuVlU2INqJiunnLSPJRoy6FZrFaLOhsaKOHHvHcOtGr37nBjFR7czH8Dy_siDxGtayRARoFBttvTl4GRBblHI0Sah3bQPOn0"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
-<div class="absolute bottom-6 left-6 right-6">
-<p class="text-xs font-bold text-secondary uppercase tracking-widest mb-1">Weekly Digest</p>
-<p class="font-headline font-bold text-on-surface">The Silent Power of Stillness</p>
-</div>
-</div>
-</aside>
-</div>
-</main>
-<!-- Side Navigation Shell (Hidden on Mobile, Docked Left) -->
-<div class="fixed left-0 top-24 bottom-0 w-64 hidden lg:flex flex-col gap-8 p-8 pointer-events-none">
-<!-- Content within SideNav shell -->
-<div class="pointer-events-auto flex flex-col gap-8">
-<div class="space-y-4">
-<div class="bg-[#bd9dff]/10 text-[#bd9dff] rounded-full px-4 py-3 flex items-center gap-4 font-inter text-sm font-medium cursor-pointer transition-all">
-<span class="material-symbols-outlined" data-icon="lightbulb">lightbulb</span>
+                </div>
+                <!-- Small Visual Card -->
+                <div class="relative h-48 rounded-lg overflow-hidden group">
+                    <img alt="Scenic mountain landscape"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        data-alt="dramatic aerial view of mountain peaks at sunrise with deep purple and blue mist filling valleys"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW-ejxrNo-tmbEnZ98Xz73iXM5s4hMV21tyTTwE0mkf_Xib30gHQwamjoKq0qajB_bNpi2y-ViVXMJu-cDbKpNtPJL5IzHOxFfBgS3scHIA9uhgdo9cTfq_4Wm00NWuoMPHaOXvkceS9z5ZYKngFVR6xX4ybRoy6EILlvx079UASjkuVlU2INqJiunnLSPJRoy6FZrFaLOhsaKOHHvHcOtGr37nBjFR7czH8Dy_siDxGtayRARoFBttvTl4GRBblHI0Sah3bQPOn0" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-1">Weekly Digest</p>
+                        <p class="font-headline font-bold text-on-surface">The Silent Power of Stillness</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <!-- Side Navigation Shell (Hidden on Mobile, Docked Left) -->
+    <div class="fixed left-0 top-24 bottom-0 w-64 hidden lg:flex flex-col gap-8 p-8 pointer-events-none">
+        <!-- Content within SideNav shell -->
+        <div class="pointer-events-auto flex flex-col gap-8">
+            <div class="space-y-4">
+                <div
+                    class="bg-[#bd9dff]/10 text-[#bd9dff] rounded-full px-4 py-3 flex items-center gap-4 font-inter text-sm font-medium cursor-pointer transition-all">
+                    <span class="material-symbols-outlined" data-icon="lightbulb">lightbulb</span>
                     Daily Wisdom
                 </div>
-<div class="text-[#a3aac4] hover:bg-[#192540] rounded-full px-4 py-3 flex items-center gap-4 font-inter text-sm font-medium cursor-pointer transition-all group">
-<span class="material-symbols-outlined group-hover:text-[#dee5ff]" data-icon="trending_up">trending_up</span>
+                <div
+                    class="text-[#a3aac4] hover:bg-[#192540] rounded-full px-4 py-3 flex items-center gap-4 font-inter text-sm font-medium cursor-pointer transition-all group">
+                    <span class="material-symbols-outlined group-hover:text-[#dee5ff]"
+                        data-icon="trending_up">trending_up</span>
                     Trending Advice
                 </div>
-</div>
-</div>
-</div>
-<!-- Footer Shell -->
-<footer class="mt-auto py-20 border-t border-[#40485d]/15 bg-transparent">
-<div class="flex flex-col items-center gap-8 w-full max-w-screen-2xl mx-auto px-12">
-<div class="flex gap-8">
-<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors font-inter text-xs" href="/terms">Terms</a>
-<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors font-inter text-xs" href="/privacy">Privacy</a>
-<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors font-inter text-xs" href="/api">API Attribution</a>
-</div>
-<div class="flex items-center gap-4">
-<div class="w-8 h-[1px] bg-[#40485d]/30"></div>
-<p class="text-[#a3aac4] font-inter text-xs">© 2024 AdviceFlow. Powered by Advice Slip API.</p>
-<div class="w-8 h-[1px] bg-[#40485d]/30"></div>
-</div>
-</div>
-</footer>
-</body></html>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Shell -->
+    <footer class="mt-auto py-20 border-t border-[#40485d]/15 bg-transparent">
+        <div class="flex flex-col items-center gap-8 w-full max-w-screen-2xl mx-auto px-12">
+            <div class="flex gap-8">
+                <a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors font-inter text-xs"
+                    href="/terms">Terms</a>
+                <a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors font-inter text-xs"
+                    href="/privacy">Privacy</a>
+                <a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors font-inter text-xs" href="/api">API
+                    Attribution</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="w-8 h-[1px] bg-[#40485d]/30"></div>
+                <p class="text-[#a3aac4] font-inter text-xs">© 2024 AdviceFlow. Powered by Advice Slip API.</p>
+                <div class="w-8 h-[1px] bg-[#40485d]/30"></div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
