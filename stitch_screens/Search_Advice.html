@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#a67aff",
+                        "tertiary-container": "#d6b2fc",
+                        "on-error": "#490013",
+                        "primary": "#bd9dff",
+                        "on-primary-container": "#2e006c",
+                        "on-primary-fixed": "#000000",
+                        "surface-container-highest": "#192540",
+                        "error": "#ff6e84",
+                        "on-secondary-fixed": "#003853",
+                        "surface-container-high": "#141f38",
+                        "secondary-fixed-dim": "#81ccff",
+                        "tertiary-fixed": "#d6b2fc",
+                        "on-tertiary-fixed": "#361757",
+                        "surface-container-low": "#091328",
+                        "surface-container": "#0f1930",
+                        "on-background": "#dee5ff",
+                        "on-surface-variant": "#a3aac4",
+                        "surface-container-lowest": "#000000",
+                        "primary-container": "#b28cff",
+                        "secondary-dim": "#17a8ec",
+                        "on-primary": "#3c0089",
+                        "on-secondary": "#003047",
+                        "on-error-container": "#ffb2b9",
+                        "tertiary": "#e1c3ff",
+                        "inverse-primary": "#742fe5",
+                        "on-tertiary-fixed-variant": "#553777",
+                        "background": "#060e20",
+                        "on-tertiary-container": "#4c2e6d",
+                        "secondary-fixed": "#a4d8ff",
+                        "on-surface": "#dee5ff",
+                        "surface-bright": "#1f2b49",
+                        "on-secondary-fixed-variant": "#00567c",
+                        "on-primary-fixed-variant": "#390083",
+                        "surface-dim": "#060e20",
+                        "error-dim": "#d73357",
+                        "surface-tint": "#bd9dff",
+                        "inverse-surface": "#faf8ff",
+                        "tertiary-dim": "#c8a5ed",
+                        "surface-variant": "#192540",
+                        "on-secondary-container": "#f3f8ff",
+                        "outline-variant": "#40485d",
+                        "surface": "#060e20",
+                        "primary-fixed": "#b28cff",
+                        "outline": "#6d758c",
+                        "secondary-container": "#006591",
+                        "inverse-on-surface": "#4d556b",
+                        "secondary": "#34b5fa",
+                        "on-tertiary": "#553777",
+                        "primary-dim": "#8a4cfc",
+                        "error-container": "#a70138",
+                        "tertiary-fixed-dim": "#c8a5ed"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shimmer {
+            background: linear-gradient(90deg, #0f1930 25%, #192540 50%, #0f1930 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite linear;
+        }
+        @keyframes shimmer {
+            from { background-position: 200% 0; }
+            to { background-position: -200% 0; }
+        }
+        .ease-out-quint {
+            transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30 min-h-screen flex flex-col">
+<!-- TopNavBar Component -->
+<header class="bg-[#0f1930]/60 backdrop-blur-3xl docked full-width top-0 sticky z-50 shadow-[0_0_40px_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center w-full px-12 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#dee5ff] font-manrope">AdviceFlow</div>
+<nav class="hidden md:flex items-center gap-8 font-manrope tracking-tight text-sm uppercase">
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors hover:scale-[1.02] duration-300 ease-out-quint" href="#">Home</a>
+<a class="text-[#bd9dff] border-b-2 border-[#bd9dff] pb-1 hover:scale-[1.02] duration-300 ease-out-quint" href="#">Search</a>
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors hover:scale-[1.02] duration-300 ease-out-quint" href="#">Favorites</a>
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors hover:scale-[1.02] duration-300 ease-out-quint" href="#">About</a>
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors hover:scale-[1.02] duration-300 ease-out-quint" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-[#bd9dff] cursor-pointer hover:scale-[1.02] transition-transform" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-[#bd9dff] cursor-pointer hover:scale-[1.02] transition-transform" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center">
+<!-- Search Section -->
+<section class="w-full max-w-4xl px-6 pt-12 pb-8">
+<div class="relative group">
+<div class="absolute inset-y-0 left-6 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-primary/60 group-focus-within:text-primary transition-colors" data-icon="search">search</span>
+</div>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/10 rounded-full py-6 pl-16 pr-8 text-lg font-body focus:outline-none focus:ring-4 focus:ring-secondary/20 focus:border-secondary transition-all shadow-2xl backdrop-blur-xl" placeholder="Search for life insights, coding tips, or daily wisdom..." type="text"/>
+</div>
+<!-- Search History Chips -->
+<div class="mt-8 flex flex-wrap gap-3 items-center">
+<span class="text-xs uppercase tracking-widest text-on-surface-variant font-semibold mr-2">Recent Searches</span>
+<button class="bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface px-5 py-2 rounded-full text-sm transition-colors border border-outline-variant/5">productivity hacks</button>
+<button class="bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface px-5 py-2 rounded-full text-sm transition-colors border border-outline-variant/5">career growth</button>
+<button class="bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface px-5 py-2 rounded-full text-sm transition-colors border border-outline-variant/5">stoic philosophy</button>
+<button class="bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface px-5 py-2 rounded-full text-sm transition-colors border border-outline-variant/5">evening routine</button>
+<button class="text-secondary text-xs font-bold hover:underline ml-2">Clear All</button>
+</div>
+</section>
+<!-- Results Grid -->
+<section class="w-full max-w-7xl px-12 py-12">
+<div class="flex items-baseline justify-between mb-10">
+<h2 class="text-3xl font-headline font-bold tracking-tight">Search Results</h2>
+<span class="text-on-surface-variant text-sm">Showing 12 insights found</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Result Card 1 -->
+<a class="group relative flex flex-col bg-surface-container/70 backdrop-blur-md rounded-xl p-8 hover:bg-surface-bright transition-all duration-500 ease-out-quint scale-100 hover:scale-[1.03] shadow-lg overflow-hidden" href="/advice/1">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="flex justify-between items-start mb-6">
+<span class="bg-primary/10 text-primary text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">Productivity</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="star">star</span>
+</div>
+<h3 class="text-xl font-headline font-semibold mb-4 leading-snug">Focus on the process, not the outcome, to maintain long-term consistency.</h3>
+<div class="mt-auto flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="James" class="w-full h-full object-cover" data-alt="Portrait of a creative professional in soft blue lighting with a clean aesthetic background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqdEtSv6KsB9cbH8RgXMFPNpfDL-gjcsA7saYdqaNpv19sP7gjMbFQcj_86X8ZUwdExRvrQqEXeU2fXGaAK60ErzLsStngLJfwOMwzYt7iTim5pViZ4qrvGHLC17aG-Q4DrOFqqT5vkdXhCli6HZ0a_guZSUdpub9d8BtaLcXxUKclrtPlLVzlUyvKDsTEAHysSdoX_WDibM7J3oMh-IClL0eq768vU1n4tYf1x61pLtjGGmZhyUgVfCNbim27O_bbiM0oZ7P7TZU"/>
+</div>
+<span class="text-xs text-on-surface-variant">Shared by James T.</span>
+</div>
+</a>
+<!-- Result Card 2 (Secondary Color accent) -->
+<a class="group relative flex flex-col bg-surface-container/70 backdrop-blur-md rounded-xl p-8 hover:bg-surface-bright transition-all duration-500 ease-out-quint scale-100 hover:scale-[1.03] shadow-lg overflow-hidden" href="/advice/2">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-secondary/10 transition-colors"></div>
+<div class="flex justify-between items-start mb-6">
+<span class="bg-secondary/10 text-secondary text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">Mental Health</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary transition-colors" data-icon="favorite">favorite</span>
+</div>
+<h3 class="text-xl font-headline font-semibold mb-4 leading-snug">The best way to clear your head is a twenty-minute walk in nature.</h3>
+<div class="mt-auto flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="Sarah" class="w-full h-full object-cover" data-alt="Close up portrait of a smiling woman with glasses in a warm sunlit library environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2I4Utt51nGZH9M7Sc8BeEC0dQtYeaXNMpBOfTX8o09N5yEpTyWJ1h9psnW_SLMkCAXHM2NyaGmDz71Wf7Dk0byaO5q8TS2GO3vR74SB5jNlktowakd9UbKayZgBy59Ft-8X7HJLzfd7kylN3G6H2G6CPoLwMwQC2wiiYIyuse-zLAzS6uY-pAguHUCTqu7rGQk7kjTSh7rB5txs0KAtTywSlzX84RMGGNkZss6yzcMT4CbySFpHt8xb6qfrFztsfLi9JdgZ6vJAw"/>
+</div>
+<span class="text-xs text-on-surface-variant">Shared by Sarah Jenkins</span>
+</div>
+</a>
+<!-- Loading Shimmer State 1 -->
+<div class="flex flex-col bg-surface-container-low/50 rounded-xl p-8 shadow-sm">
+<div class="flex justify-between mb-6">
+<div class="h-5 w-24 shimmer rounded-full opacity-40"></div>
+<div class="h-6 w-6 shimmer rounded-full opacity-40"></div>
+</div>
+<div class="h-6 w-full shimmer rounded-md mb-3 opacity-40"></div>
+<div class="h-6 w-3/4 shimmer rounded-md mb-8 opacity-40"></div>
+<div class="mt-auto flex items-center gap-3">
+<div class="w-8 h-8 rounded-full shimmer opacity-40"></div>
+<div class="h-3 w-32 shimmer rounded-md opacity-40"></div>
+</div>
+</div>
+<!-- Loading Shimmer State 2 -->
+<div class="flex flex-col bg-surface-container-low/50 rounded-xl p-8 shadow-sm">
+<div class="flex justify-between mb-6">
+<div class="h-5 w-24 shimmer rounded-full opacity-40"></div>
+<div class="h-6 w-6 shimmer rounded-full opacity-40"></div>
+</div>
+<div class="h-6 w-full shimmer rounded-md mb-3 opacity-40"></div>
+<div class="h-6 w-3/4 shimmer rounded-md mb-8 opacity-40"></div>
+<div class="mt-auto flex items-center gap-3">
+<div class="w-8 h-8 rounded-full shimmer opacity-40"></div>
+<div class="h-3 w-32 shimmer rounded-md opacity-40"></div>
+</div>
+</div>
+<!-- Result Card 3 -->
+<a class="group relative flex flex-col bg-surface-container/70 backdrop-blur-md rounded-xl p-8 hover:bg-surface-bright transition-all duration-500 ease-out-quint scale-100 hover:scale-[1.03] shadow-lg overflow-hidden" href="/advice/3">
+<div class="absolute top-0 right-0 w-32 h-32 bg-tertiary/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-tertiary/10 transition-colors"></div>
+<div class="flex justify-between items-start mb-6">
+<span class="bg-tertiary/10 text-tertiary text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">Philosophy</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-tertiary transition-colors" data-icon="lightbulb">lightbulb</span>
+</div>
+<h3 class="text-xl font-headline font-semibold mb-4 leading-snug">We suffer more often in imagination than in reality.</h3>
+<div class="mt-auto flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="Marcus" class="w-full h-full object-cover" data-alt="Portrait of an older man with white hair and wise expression in a dramatic black and white lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2L1ZXIZ668ykxhyCHjnWzr-9KEZsWkfhB2RGFC9TqYGZ5DN-84O_ud1z2rMMEe1v-KETVEMbAaC4x1svHTzI62_k2OMfKone3ahPCBZsMk81WgKTWvF37ZIisdxw5AwXQqfDsJposxGY4IjFJiH-ae2Gn7HVjmP5nb-FTdDjYy2ikINmBub_1yrTXDrfWBD5NtjmlFdVNo4SUAhKQeeOEqhaSkBmIqUEf580N3LgkfqRo7H_x2tIRKBO6yTp_f8_ykZUa00SZfEc"/>
+</div>
+<span class="text-xs text-on-surface-variant">Shared by Marcus A.</span>
+</div>
+</a>
+<!-- Loading Shimmer State 3 -->
+<div class="flex flex-col bg-surface-container-low/50 rounded-xl p-8 shadow-sm">
+<div class="flex justify-between mb-6">
+<div class="h-5 w-24 shimmer rounded-full opacity-40"></div>
+<div class="h-6 w-6 shimmer rounded-full opacity-40"></div>
+</div>
+<div class="h-6 w-full shimmer rounded-md mb-3 opacity-40"></div>
+<div class="h-6 w-3/4 shimmer rounded-md mb-8 opacity-40"></div>
+<div class="mt-auto flex items-center gap-3">
+<div class="w-8 h-8 rounded-full shimmer opacity-40"></div>
+<div class="h-3 w-32 shimmer rounded-md opacity-40"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Elegant Empty State (Hidden by default, shown for demonstration logic) -->
+<section class="hidden w-full max-w-2xl py-32 flex-col items-center text-center">
+<div class="relative w-64 h-64 mb-12">
+<div class="absolute inset-0 bg-primary/10 rounded-full blur-3xl"></div>
+<img alt="No results found" class="relative z-10 w-full h-full object-contain mix-blend-screen" data-alt="Minimalist abstract illustration of a lonely astronaut floating in a dark purple space nebula searching with a beam of light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR-7F-K7S2NvSe2Uzubu9now15q5ekACvQnyPMvCw0jIUouGD-LmEYzvRbrR0Edu8v9I0vtEb2kiDpg1DREzdqOh4qWtjm8i1OqIJIKWCupq4xHfJs3vaJ00BZqqpij_3Pbj2A4aurbk7f-Vi08QwmA1gK4XmppvEh3yQktnDEntdngWXbZ8UQQMqphOjF6JgIYSLJkMCUf3-gpjjjgQzmDSsfYaWkM9aJZLxDz02Gt2w9tB7u3quuhSpO1PkNa9-6Jv8tbAaH0Js"/>
+</div>
+<h3 class="text-4xl font-headline font-bold mb-4">The void is silent.</h3>
+<p class="text-on-surface-variant text-lg max-w-md mx-auto leading-relaxed">We couldn't find any advice matching your query. Perhaps the universe has other wisdom for you today?</p>
+<button class="mt-10 bg-primary-container text-on-primary-container px-10 py-4 rounded-full font-bold hover:scale-105 transition-transform shadow-[0_0_15px_rgba(189,157,255,0.2)]">Explore Trending Wisdom</button>
+</section>
+</main>
+<!-- SideNavBar (Hidden on Mobile) -->
+<aside class="fixed left-0 top-24 hidden lg:flex flex-col gap-8 p-8 h-full w-64 bg-[#091328] font-inter text-sm font-medium z-40">
+<div class="mb-4">
+<h4 class="text-[#bd9dff] text-xs uppercase tracking-[0.2em] mb-1">Insights</h4>
+<p class="text-[#a3aac4] text-[10px]">The Digital Obsidian</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 text-[#a3aac4] px-4 py-3 hover:bg-[#192540] rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="lightbulb">lightbulb</span>
+                Daily Wisdom
+            </a>
+<a class="flex items-center gap-4 text-[#a3aac4] px-4 py-3 hover:bg-[#192540] rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+                Trending Advice
+            </a>
+</nav>
+</aside>
+<!-- Footer -->
+<footer class="full-width py-20 mt-auto bg-transparent border-t border-[#40485d]/15">
+<div class="flex flex-col items-center gap-4 w-full">
+<div class="flex gap-10">
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors font-inter text-xs uppercase tracking-widest" href="#">Terms</a>
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors font-inter text-xs uppercase tracking-widest" href="#">Privacy</a>
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors font-inter text-xs uppercase tracking-widest" href="#">API Attribution</a>
+</div>
+<p class="font-inter text-xs text-[#a3aac4] opacity-50">© 2024 AdviceFlow. Powered by Advice Slip API.</p>
+</div>
+</footer>
+<!-- Bottom Mobile Nav -->
+<div class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm bg-surface-container-highest/80 backdrop-blur-2xl rounded-full px-8 py-4 flex justify-between items-center z-50 shadow-2xl">
+<a class="text-on-surface-variant flex flex-col items-center" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</a>
+<a class="text-primary flex flex-col items-center" href="#">
+<span class="material-symbols-outlined" data-icon="search" style="font-variation-settings: 'FILL' 1;">search</span>
+</a>
+<a class="text-on-surface-variant flex flex-col items-center" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</a>
+<a class="text-on-surface-variant flex flex-col items-center" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</a>
+</div>
+</body></html>

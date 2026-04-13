@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trending Wisdom | AdviceFlow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#00567c",
+                    "secondary-fixed": "#a4d8ff",
+                    "on-tertiary-fixed": "#361757",
+                    "tertiary-fixed": "#d6b2fc",
+                    "outline": "#6d758c",
+                    "error-container": "#a70138",
+                    "outline-variant": "#40485d",
+                    "secondary-container": "#006591",
+                    "background": "#060e20",
+                    "inverse-surface": "#faf8ff",
+                    "primary-fixed-dim": "#a67aff",
+                    "on-error": "#490013",
+                    "primary-fixed": "#b28cff",
+                    "tertiary-fixed-dim": "#c8a5ed",
+                    "secondary-fixed-dim": "#81ccff",
+                    "tertiary-dim": "#c8a5ed",
+                    "secondary": "#34b5fa",
+                    "on-primary-container": "#2e006c",
+                    "on-secondary-fixed": "#003853",
+                    "inverse-primary": "#742fe5",
+                    "on-secondary-container": "#f3f8ff",
+                    "on-primary-fixed-variant": "#390083",
+                    "on-tertiary": "#553777",
+                    "on-secondary": "#003047",
+                    "surface-dim": "#060e20",
+                    "surface-bright": "#1f2b49",
+                    "surface-container-low": "#091328",
+                    "surface-container": "#0f1930",
+                    "tertiary": "#e1c3ff",
+                    "on-tertiary-fixed-variant": "#553777",
+                    "surface-variant": "#192540",
+                    "surface-tint": "#bd9dff",
+                    "surface-container-high": "#141f38",
+                    "error": "#ff6e84",
+                    "error-dim": "#d73357",
+                    "inverse-on-surface": "#4d556b",
+                    "surface-container-lowest": "#000000",
+                    "secondary-dim": "#17a8ec",
+                    "on-surface": "#dee5ff",
+                    "primary-container": "#b28cff",
+                    "primary-dim": "#8a4cfc",
+                    "on-error-container": "#ffb2b9",
+                    "surface-container-highest": "#192540",
+                    "on-tertiary-container": "#4c2e6d",
+                    "tertiary-container": "#d6b2fc",
+                    "on-surface-variant": "#a3aac4",
+                    "on-background": "#dee5ff",
+                    "on-primary-fixed": "#000000",
+                    "surface": "#060e20",
+                    "primary": "#bd9dff",
+                    "on-primary": "#3c0089"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #060e20; color: #dee5ff; font-family: 'Inter', sans-serif; }
+        .glass-card { background: rgba(15, 25, 48, 0.7); backdrop-filter: blur(24px); }
+        .hero-glow { background: radial-gradient(circle at center, rgba(189, 157, 255, 0.15) 0%, rgba(6, 14, 32, 0) 70%); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+        .active-glow { box-shadow: 0px 0px 15px rgba(189, 157, 255, 0.2); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-12 md:px-12 px-4 h-24">
+<nav class="bg-[#192540]/80 backdrop-blur-xl rounded-full mt-6 mx-auto max-w-fit px-8 py-3 flex items-center gap-8 shadow-[0px_0px_15px_rgba(189,157,255,0.2)]">
+<div class="text-2xl font-bold tracking-tighter text-[#dee5ff] font-['Manrope'] mr-4">AdviceFlow</div>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors font-['Manrope'] tracking-tight text-sm font-medium hover:bg-[#bd9dff]/10 rounded-full px-3 py-1" href="#">Home</a>
+<a class="text-[#bd9dff] font-bold border-b-2 border-[#bd9dff] pb-1 font-['Manrope'] tracking-tight text-sm font-medium" href="#">Trending</a>
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors font-['Manrope'] tracking-tight text-sm font-medium hover:bg-[#bd9dff]/10 rounded-full px-3 py-1" href="#">Search</a>
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors font-['Manrope'] tracking-tight text-sm font-medium hover:bg-[#bd9dff]/10 rounded-full px-3 py-1" href="#">Favorites</a>
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors font-['Manrope'] tracking-tight text-sm font-medium hover:bg-[#bd9dff]/10 rounded-full px-3 py-1" href="#">About</a>
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors font-['Manrope'] tracking-tight text-sm font-medium hover:bg-[#bd9dff]/10 rounded-full px-3 py-1" href="#">Settings</a>
+</div>
+<div class="flex items-center gap-3 ml-4">
+<span class="material-symbols-outlined text-[#bd9dff] cursor-pointer hover:bg-[#bd9dff]/10 p-2 rounded-full transition-all">notifications</span>
+<span class="material-symbols-outlined text-[#bd9dff] cursor-pointer hover:bg-[#bd9dff]/10 p-2 rounded-full transition-all">account_circle</span>
+</div>
+</nav>
+</header>
+<main class="flex-grow pt-32 pb-24">
+<!-- Hero Section -->
+<section class="relative px-6 py-20 text-center hero-glow overflow-hidden">
+<div class="max-w-4xl mx-auto relative z-10">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary mb-6 animate-pulse">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<span class="text-xs font-bold tracking-widest uppercase">Popular Now</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight text-on-surface mb-6">
+                    Trending Wisdom
+                </h1>
+<p class="font-body text-xl text-on-surface-variant max-w-2xl mx-auto">
+                    The most loved advice from across the AdviceFlow community, curated by engagement and insight quality.
+                </p>
+</div>
+<!-- Decorative accent -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 blur-[120px] -z-0"></div>
+</section>
+<!-- Featured Top Cards (Horizontal Bento Scroll) -->
+<section class="px-6 md:px-12 mb-20 overflow-x-auto no-scrollbar">
+<div class="flex gap-6 pb-8 min-w-max md:grid md:grid-cols-5 md:min-w-0">
+<!-- Featured 1 -->
+<div class="group relative w-[320px] md:w-auto glass-card p-8 rounded-xl border border-outline-variant/15 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 cursor-pointer active:scale-[0.98]">
+<div class="flex justify-between items-start mb-6">
+<span class="text-xs font-mono text-primary/60 tracking-wider">SLIP #204</span>
+<div class="flex items-center gap-1.5 px-3 py-1 bg-surface-container-highest rounded-full">
+<span class="material-symbols-outlined text-error text-sm" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-xs font-bold text-on-surface">4,892</span>
+</div>
+</div>
+<blockquote class="font-headline text-xl font-bold text-on-surface leading-relaxed mb-8 h-32 overflow-hidden italic">
+                        "Your speed doesn't matter, forward is forward."
+                    </blockquote>
+<div class="flex justify-between items-center pt-6 border-t border-outline-variant/10">
+<span class="text-xs font-medium text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-secondary">verified</span> Top Advice
+                        </span>
+<button class="p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary text-xl">content_copy</span>
+</button>
+</div>
+<div class="absolute -inset-px bg-gradient-to-br from-primary/20 via-transparent to-secondary/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+</div>
+<!-- Featured 2 -->
+<div class="group relative w-[320px] md:w-auto glass-card p-8 rounded-xl border border-outline-variant/15 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 cursor-pointer active:scale-[0.98]">
+<div class="flex justify-between items-start mb-6">
+<span class="text-xs font-mono text-primary/60 tracking-wider">SLIP #118</span>
+<div class="flex items-center gap-1.5 px-3 py-1 bg-surface-container-highest rounded-full">
+<span class="material-symbols-outlined text-error text-sm" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-xs font-bold text-on-surface">3,210</span>
+</div>
+</div>
+<blockquote class="font-headline text-xl font-bold text-on-surface leading-relaxed mb-8 h-32 overflow-hidden italic">
+                        "Stop checking for others' opinions before you check your own."
+                    </blockquote>
+<div class="flex justify-between items-center pt-6 border-t border-outline-variant/10">
+<span class="text-xs font-medium text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-secondary">verified</span> Top Advice
+                        </span>
+<button class="p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary text-xl">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Featured 3 -->
+<div class="group relative w-[320px] md:w-auto glass-card p-8 rounded-xl border border-outline-variant/15 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 cursor-pointer active:scale-[0.98]">
+<div class="flex justify-between items-start mb-6">
+<span class="text-xs font-mono text-primary/60 tracking-wider">SLIP #55</span>
+<div class="flex items-center gap-1.5 px-3 py-1 bg-surface-container-highest rounded-full">
+<span class="material-symbols-outlined text-error text-sm" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-xs font-bold text-on-surface">2,904</span>
+</div>
+</div>
+<blockquote class="font-headline text-xl font-bold text-on-surface leading-relaxed mb-8 h-32 overflow-hidden italic">
+                        "The best way to get started is to quit talking and begin doing."
+                    </blockquote>
+<div class="flex justify-between items-center pt-6 border-t border-outline-variant/10">
+<span class="text-xs font-medium text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-secondary">verified</span> Top Advice
+                        </span>
+<button class="p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary text-xl">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Featured 4 -->
+<div class="group relative w-[320px] md:w-auto glass-card p-8 rounded-xl border border-outline-variant/15 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 cursor-pointer active:scale-[0.98]">
+<div class="flex justify-between items-start mb-6">
+<span class="text-xs font-mono text-primary/60 tracking-wider">SLIP #142</span>
+<div class="flex items-center gap-1.5 px-3 py-1 bg-surface-container-highest rounded-full">
+<span class="material-symbols-outlined text-error text-sm" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-xs font-bold text-on-surface">1,877</span>
+</div>
+</div>
+<blockquote class="font-headline text-xl font-bold text-on-surface leading-relaxed mb-8 h-32 overflow-hidden italic">
+                        "Never let a bad day make you feel like you have a bad life."
+                    </blockquote>
+<div class="flex justify-between items-center pt-6 border-t border-outline-variant/10">
+<span class="text-xs font-medium text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-secondary">verified</span> Top Advice
+                        </span>
+<button class="p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary text-xl">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Featured 5 -->
+<div class="group relative w-[320px] md:w-auto glass-card p-8 rounded-xl border border-outline-variant/15 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 cursor-pointer active:scale-[0.98]">
+<div class="flex justify-between items-start mb-6">
+<span class="text-xs font-mono text-primary/60 tracking-wider">SLIP #09</span>
+<div class="flex items-center gap-1.5 px-3 py-1 bg-surface-container-highest rounded-full">
+<span class="material-symbols-outlined text-error text-sm" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-xs font-bold text-on-surface">1,050</span>
+</div>
+</div>
+<blockquote class="font-headline text-xl font-bold text-on-surface leading-relaxed mb-8 h-32 overflow-hidden italic">
+                        "Your potential is endless. Go do what you were created to do."
+                    </blockquote>
+<div class="flex justify-between items-center pt-6 border-t border-outline-variant/10">
+<span class="text-xs font-medium text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-secondary">verified</span> Top Advice
+                        </span>
+<button class="p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary text-xl">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Grid -->
+<section class="px-6 md:px-12">
+<h2 class="font-headline text-3xl font-bold text-on-surface mb-10 flex items-center gap-3">
+                Current Discoveries
+                <span class="h-px flex-grow bg-outline-variant/20"></span>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Item 1 -->
+<div class="surface-container p-8 rounded-lg border border-outline-variant/10 hover:bg-surface-bright transition-all group">
+<div class="flex justify-between items-center mb-6">
+<span class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">SLIP #230</span>
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 0;">auto_awesome</span>
+</div>
+<p class="font-body text-on-surface mb-8 line-clamp-3">Don't sacrifice your future self for a temporary comfort in the present.</p>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error-dim text-sm">favorite</span>
+<span class="text-xs font-medium text-on-surface-variant">984</span>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 hover:bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-sm text-primary">ios_share</span>
+</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="surface-container p-8 rounded-lg border border-outline-variant/10 hover:bg-surface-bright transition-all group">
+<div class="flex justify-between items-center mb-6">
+<span class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">SLIP #44</span>
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 0;">bolt</span>
+</div>
+<p class="font-body text-on-surface mb-8 line-clamp-3">Energy is contagious. Be careful who you share yours with.</p>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error-dim text-sm">favorite</span>
+<span class="text-xs font-medium text-on-surface-variant">872</span>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 hover:bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-sm text-primary">ios_share</span>
+</button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="surface-container p-8 rounded-lg border border-outline-variant/10 hover:bg-surface-bright transition-all group">
+<div class="flex justify-between items-center mb-6">
+<span class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">SLIP #102</span>
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 0;">neurology</span>
+</div>
+<p class="font-body text-on-surface mb-8 line-clamp-3">If you want to be successful, you must respect one rule: Never lie to yourself.</p>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error-dim text-sm">favorite</span>
+<span class="text-xs font-medium text-on-surface-variant">755</span>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 hover:bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-sm text-primary">ios_share</span>
+</button>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="surface-container p-8 rounded-lg border border-outline-variant/10 hover:bg-surface-bright transition-all group">
+<div class="flex justify-between items-center mb-6">
+<span class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">SLIP #89</span>
+<span class="material-symbols-outlined text-primary text-lg">mood</span>
+</div>
+<p class="font-body text-on-surface mb-8 line-clamp-3">You are what you do, not what you say you'll do.</p>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error-dim text-sm">favorite</span>
+<span class="text-xs font-medium text-on-surface-variant">610</span>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 hover:bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-sm text-primary">ios_share</span>
+</button>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="surface-container p-8 rounded-lg border border-outline-variant/10 hover:bg-surface-bright transition-all group">
+<div class="flex justify-between items-center mb-6">
+<span class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">SLIP #31</span>
+<span class="material-symbols-outlined text-primary text-lg">rocket_launch</span>
+</div>
+<p class="font-body text-on-surface mb-8 line-clamp-3">The scariest moment is always just before you start.</p>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error-dim text-sm">favorite</span>
+<span class="text-xs font-medium text-on-surface-variant">592</span>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 hover:bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-sm text-primary">ios_share</span>
+</button>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="surface-container p-8 rounded-lg border border-outline-variant/10 hover:bg-surface-bright transition-all group">
+<div class="flex justify-between items-center mb-6">
+<span class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">SLIP #77</span>
+<span class="material-symbols-outlined text-primary text-lg">public</span>
+</div>
+<p class="font-body text-on-surface mb-8 line-clamp-3">Don't try to build a forest. Just plant one tree at a time.</p>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error-dim text-sm">favorite</span>
+<span class="text-xs font-medium text-on-surface-variant">428</span>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 hover:bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-sm text-primary">ios_share</span>
+</button>
+</div>
+</div>
+<!-- Item 7 -->
+<div class="surface-container p-8 rounded-lg border border-outline-variant/10 hover:bg-surface-bright transition-all group">
+<div class="flex justify-between items-center mb-6">
+<span class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">SLIP #15</span>
+<span class="material-symbols-outlined text-primary text-lg">history</span>
+</div>
+<p class="font-body text-on-surface mb-8 line-clamp-3">Mistakes are the stairs we climb to reach the next level.</p>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error-dim text-sm">favorite</span>
+<span class="text-xs font-medium text-on-surface-variant">331</span>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 hover:bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-sm text-primary">ios_share</span>
+</button>
+</div>
+</div>
+<!-- Item 8 -->
+<div class="surface-container p-8 rounded-lg border border-outline-variant/10 hover:bg-surface-bright transition-all group">
+<div class="flex justify-between items-center mb-6">
+<span class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">SLIP #21</span>
+<span class="material-symbols-outlined text-primary text-lg">star</span>
+</div>
+<p class="font-body text-on-surface mb-8 line-clamp-3">Great things never come from comfort zones.</p>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error-dim text-sm">favorite</span>
+<span class="text-xs font-medium text-on-surface-variant">294</span>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 hover:bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-sm text-primary">ios_share</span>
+</button>
+</div>
+</div>
+<!-- Item 9 -->
+<div class="surface-container p-8 rounded-lg border border-outline-variant/10 hover:bg-surface-bright transition-all group">
+<div class="flex justify-between items-center mb-6">
+<span class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">SLIP #99</span>
+<span class="material-symbols-outlined text-primary text-lg">favorite</span>
+</div>
+<p class="font-body text-on-surface mb-8 line-clamp-3">Work hard in silence. Let your success be your noise.</p>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error-dim text-sm">favorite</span>
+<span class="text-xs font-medium text-on-surface-variant">158</span>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 hover:bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-sm text-primary">ios_share</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-16">
+<button class="px-8 py-3 bg-primary-container text-on-primary-container rounded-full font-bold shadow-[0px_0px_15px_rgba(189,157,255,0.2)] hover:scale-105 active:scale-95 transition-all">
+                    Load More Wisdom
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full mt-auto flex flex-col items-center gap-4 py-12 border-t border-[#40485d]/10 bg-[#060e20]">
+<div class="text-[#dee5ff] font-bold font-['Inter'] text-sm tracking-widest uppercase">AdviceFlow</div>
+<div class="flex gap-8">
+<a class="text-[#a3aac4] hover:text-[#34b5fa] transition-colors font-['Inter'] text-xs uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="text-[#a3aac4] hover:text-[#34b5fa] transition-colors font-['Inter'] text-xs uppercase tracking-widest" href="#">Terms of Service</a>
+<a class="text-[#a3aac4] hover:text-[#34b5fa] transition-colors font-['Inter'] text-xs uppercase tracking-widest" href="#">Contact</a>
+</div>
+<p class="text-[#a3aac4] font-['Inter'] text-[10px] uppercase tracking-[0.2em] mt-4 opacity-50">© 2024 AdviceFlow. Digital Obsidian Design.</p>
+</footer>
+<!-- SideNavBar (Hidden on Mobile, as requested by Shell Anchor Logic) -->
+<aside class="hidden lg:flex flex-col fixed left-0 top-0 h-full w-64 bg-[#091328] border-r border-[#40485d]/15 z-40 pt-32 pb-10">
+<div class="px-8 mb-12">
+<h3 class="font-['Manrope'] text-xl font-black text-[#dee5ff]">AdviceFlow</h3>
+<p class="text-[#a3aac4] text-xs font-['Inter'] mt-1 opacity-60">Premium Insights</p>
+</div>
+<nav class="flex-grow flex flex-col gap-2">
+<a class="flex items-center gap-4 px-8 py-3 text-[#a3aac4] hover:bg-[#1f2b49] transition-all font-['Inter'] text-sm group" href="#">
+<span class="material-symbols-outlined text-[#bd9dff] group-hover:scale-110 transition-transform">home</span> Home
+            </a>
+<a class="flex items-center gap-4 px-8 py-3 text-[#bd9dff] bg-[#bd9dff]/5 rounded-r-full font-['Inter'] text-sm font-bold active-glow" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">trending_up</span> Trending
+            </a>
+<a class="flex items-center gap-4 px-8 py-3 text-[#a3aac4] hover:bg-[#1f2b49] transition-all font-['Inter'] text-sm group" href="#">
+<span class="material-symbols-outlined text-[#bd9dff] group-hover:scale-110 transition-transform">search</span> Search
+            </a>
+<a class="flex items-center gap-4 px-8 py-3 text-[#a3aac4] hover:bg-[#1f2b49] transition-all font-['Inter'] text-sm group" href="#">
+<span class="material-symbols-outlined text-[#bd9dff] group-hover:scale-110 transition-transform">favorite</span> Favorites
+            </a>
+<a class="flex items-center gap-4 px-8 py-3 text-[#a3aac4] hover:bg-[#1f2b49] transition-all font-['Inter'] text-sm group" href="#">
+<span class="material-symbols-outlined text-[#bd9dff] group-hover:scale-110 transition-transform">info</span> About
+            </a>
+<a class="flex items-center gap-4 px-8 py-3 text-[#a3aac4] hover:bg-[#1f2b49] transition-all font-['Inter'] text-sm group mt-auto" href="#">
+<span class="material-symbols-outlined text-[#bd9dff] group-hover:scale-110 transition-transform">settings</span> Settings
+            </a>
+</nav>
+<div class="px-8 pt-8 border-t border-[#40485d]/10 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a professional man with a friendly expression in a dark minimalist studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8djiaAfhL0tHXZUYlBM2vDUEV512L5oDzsdGZiVAQyzGg6S68VcdG49N6CAO5T7MS1RTqqNpbCeUYwDJ4hiMSRc0KvJkr2bo0hymClfnMJpJl7bDzxc8iIkofpMfaPfA042XlKdqDpGYfWMAw1v5KgnoTGwHBLTuL3uK25XE9aZSteZr_QVDPVZh7Z5WQslFlpG0wkuPBEgynBqMQNU8OQy0yuVBnPw60QVpCcolyBqY043ip2A18bgN78rZLABTiE8_DJt4BqHs"/>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-on-surface">Alex Rivera</span>
+<span class="text-[10px] text-primary">Pro Curator</span>
+</div>
+</div>
+</aside>
+</body></html>

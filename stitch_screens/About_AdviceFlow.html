@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#a67aff",
+                    "tertiary-container": "#d6b2fc",
+                    "on-error": "#490013",
+                    "primary": "#bd9dff",
+                    "on-primary-container": "#2e006c",
+                    "on-primary-fixed": "#000000",
+                    "surface-container-highest": "#192540",
+                    "error": "#ff6e84",
+                    "on-secondary-fixed": "#003853",
+                    "surface-container-high": "#141f38",
+                    "secondary-fixed-dim": "#81ccff",
+                    "tertiary-fixed": "#d6b2fc",
+                    "on-tertiary-fixed": "#361757",
+                    "surface-container-low": "#091328",
+                    "surface-container": "#0f1930",
+                    "on-background": "#dee5ff",
+                    "on-surface-variant": "#a3aac4",
+                    "surface-container-lowest": "#000000",
+                    "primary-container": "#b28cff",
+                    "secondary-dim": "#17a8ec",
+                    "on-primary": "#3c0089",
+                    "on-secondary": "#003047",
+                    "on-error-container": "#ffb2b9",
+                    "tertiary": "#e1c3ff",
+                    "inverse-primary": "#742fe5",
+                    "on-tertiary-fixed-variant": "#553777",
+                    "background": "#060e20",
+                    "on-tertiary-container": "#4c2e6d",
+                    "secondary-fixed": "#a4d8ff",
+                    "on-surface": "#dee5ff",
+                    "surface-bright": "#1f2b49",
+                    "on-secondary-fixed-variant": "#00567c",
+                    "on-primary-fixed-variant": "#390083",
+                    "surface-dim": "#060e20",
+                    "error-dim": "#d73357",
+                    "surface-tint": "#bd9dff",
+                    "inverse-surface": "#faf8ff",
+                    "tertiary-dim": "#c8a5ed",
+                    "surface-variant": "#192540",
+                    "on-secondary-container": "#f3f8ff",
+                    "outline-variant": "#40485d",
+                    "surface": "#060e20",
+                    "primary-fixed": "#b28cff",
+                    "outline": "#6d758c",
+                    "secondary-container": "#006591",
+                    "inverse-on-surface": "#4d556b",
+                    "secondary": "#34b5fa",
+                    "on-tertiary": "#553777",
+                    "primary-dim": "#8a4cfc",
+                    "error-container": "#a70138",
+                    "tertiary-fixed-dim": "#c8a5ed"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #060e20;
+            color: #dee5ff;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-card {
+            background: rgba(15, 25, 48, 0.6);
+            backdrop-filter: blur(24px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ease-out-quint {
+            transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col overflow-x-hidden selection:bg-primary/30 selection:text-primary">
+<!-- TopNavBar -->
+<nav class="bg-[#0f1930]/60 backdrop-blur-3xl docked full-width top-0 sticky z-50 shadow-[0_0_40px_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center w-full px-12 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#dee5ff] font-manrope">AdviceFlow</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-manrope tracking-tight text-sm uppercase text-[#a3aac4] hover:text-[#dee5ff] transition-colors ease-out-quint" href="#">Home</a>
+<a class="font-manrope tracking-tight text-sm uppercase text-[#a3aac4] hover:text-[#dee5ff] transition-colors ease-out-quint" href="#">Search</a>
+<a class="font-manrope tracking-tight text-sm uppercase text-[#a3aac4] hover:text-[#dee5ff] transition-colors ease-out-quint" href="#">Favorites</a>
+<a class="font-manrope tracking-tight text-sm uppercase text-[#bd9dff] border-b-2 border-[#bd9dff] pb-1 ease-out-quint" href="#">About</a>
+<a class="font-manrope tracking-tight text-sm uppercase text-[#a3aac4] hover:text-[#dee5ff] transition-colors ease-out-quint" href="#">Settings</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#a3aac4] hover:scale-[1.02] duration-300 ease-out-quint material-symbols-outlined" data-icon="notifications">notifications</button>
+<button class="text-[#a3aac4] hover:scale-[1.02] duration-300 ease-out-quint material-symbols-outlined" data-icon="account_circle">account_circle</button>
+</div>
+</div>
+</nav>
+<main class="flex-grow flex flex-col items-center">
+<!-- Hero Section -->
+<section class="w-full max-w-screen-xl px-8 pt-24 pb-32 flex flex-col items-center text-center relative">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+<h1 class="font-headline text-5xl md:text-7xl font-black tracking-tighter mb-8 max-w-4xl leading-tight">
+                Crafting clarity from the <span class="text-primary italic">Digital Obsidian</span>.
+            </h1>
+<p class="font-body text-xl text-on-surface-variant max-w-2xl leading-relaxed mb-12">
+                AdviceFlow is a sanctuary for thought. We curate the collective wisdom of the ages, delivering instant insights designed to navigate the complexities of the modern world.
+            </p>
+<div class="w-full h-[500px] rounded-xl overflow-hidden relative group">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
+<img alt="abstract technological grid" class="w-full h-full object-cover grayscale opacity-40 group-hover:scale-105 transition-transform duration-[2000ms] ease-out-quint" data-alt="Cinematic wide shot of a futuristic minimalist room with glowing geometric light patterns reflecting on dark polished volcanic glass surfaces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLiJ3HF6xDGsxzJb_cVX2uKivgFkkxOeexXjr8o1fq_nsZWaDsOYrxXVvWmH0MX4OCddPV0pcQfHnf91rbHymUwkHgEv_4IpR6ny3r7NtNrwYGcrraCxUzeq_3g-V8w6CZMR9Hue-Nt1UAmuufkvisD-BPBRFcQ0SxfpcKqOxAnS5GNkyut-8xINMxNCx6FJz21CRYaz84ztTcdswJzEbR2Wwol-X3Dk8g-DAx9rPsDX1F2tevRrn-t6WiHsqXAYACgg9-PfpbiRA"/>
+<div class="absolute inset-0 z-20 flex items-center justify-center">
+<div class="glass-card p-12 rounded-xl max-w-lg border border-outline-variant/15 text-left">
+<span class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-4 block">The Mission</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Simplicity is the ultimate sophistication.</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                            We believe that in an era of information overload, the most valuable currency is the right word at the right moment.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Bento Grid -->
+<section class="w-full max-w-screen-xl px-8 pb-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+<!-- Feature 1 -->
+<div class="md:col-span-7 glass-card rounded-xl border border-outline-variant/15 p-10 flex flex-col justify-end relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-20">
+<span class="material-symbols-outlined text-9xl text-primary" data-icon="lightbulb">lightbulb</span>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline text-3xl font-black mb-4">Instant Wisdom</h3>
+<p class="text-on-surface-variant text-lg max-w-md">
+                            Access a vast repository of universal truths and practical advice with a single interaction. No fluff, just the core insight.
+                        </p>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="md:col-span-5 bg-surface-container-high rounded-xl p-10 flex flex-col relative overflow-hidden border border-outline-variant/15">
+<div class="absolute inset-0 bg-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+<div class="mb-auto">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="search">search</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-3">Global Search</h3>
+<p class="text-on-surface-variant">
+                        Traverse our extensive database to find specific guidance tailored to your current dilemma.
+                    </p>
+</div>
+<!-- Feature 3 -->
+<div class="md:col-span-4 bg-surface-container rounded-xl p-10 border border-outline-variant/15 flex flex-col">
+<div class="mb-auto">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-3">Curated Favorites</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                        Build your personal library of obsidian glass insights. Save what resonates, discard what doesn't.
+                    </p>
+</div>
+<!-- Feature 4 -->
+<div class="md:col-span-8 glass-card rounded-xl p-10 border border-outline-variant/15 flex items-center gap-10 overflow-hidden">
+<div class="w-1/3 hidden md:block">
+<img alt="abstract 3d shapes" class="rounded-lg shadow-2xl grayscale contrast-125" data-alt="Close-up of elegant matte black 3D flowing ribbons intertwining in a dark void with soft purple ambient lighting on the edges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGRApPhjaK69SOhnnra_5iEdwi345_D3Dn-lSOrnaAlkLit5SQmqS88LGKd0XE4Xtks3e2_ezSkE_L0CISxj19VmR-QNUKk2oEOjjjrveP-WYpRcd05p__qeUlYTexqV559r0rvH7KxRNHDtFqBRbIZFsvBRkkn3EnFA3z_qVAEQtM_9cRnbkJCts3MFRZz2R3oxkWJ2-zTgF_z_qYotOdlNXgZVt5J4aRvZgLUWWyKhA9vB4bpBfFPbXhldVxDzvS8yGYEO-gWBI"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-headline text-2xl font-bold mb-3">Digital Obsidian Philosophy</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                            Our UI is meticulously designed to reduce cognitive load. We use tonal shifts and depth to create an environment where the content—the advice—remains the focus.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- API Attribution Section -->
+<section class="w-full bg-surface-container-lowest/50 py-24 flex flex-col items-center">
+<div class="max-w-screen-xl px-8 flex flex-col md:flex-row items-center gap-16">
+<div class="flex-1">
+<h2 class="font-headline text-3xl font-black mb-6">Built on Open Intelligence</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+                        AdviceFlow proudly leverages the <span class="text-secondary font-bold">Advice Slip API</span>. This collaboration allows us to tap into an ever-evolving stream of human perspective, which we then refine and present through our premium interface.
+                    </p>
+<a class="inline-flex items-center gap-2 text-secondary hover:text-on-secondary-container transition-colors font-medium" href="https://adviceslip.com/" target="_blank">
+                        Explore the API Source
+                        <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+<div class="flex-1 flex justify-center">
+<div class="relative">
+<div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
+<div class="relative glass-card border border-outline-variant/30 p-12 rounded-xl text-center">
+<span class="material-symbols-outlined text-6xl text-primary mb-4" data-icon="terminal">terminal</span>
+<div class="font-mono text-primary-fixed-dim text-sm">GET /advice</div>
+<div class="text-xs text-on-surface-variant mt-2 opacity-50 uppercase tracking-widest">External Data Stream</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="w-full max-w-screen-xl px-8 py-40 flex flex-col items-center text-center">
+<h2 class="font-headline text-4xl md:text-6xl font-black mb-8 leading-tight">Ready to seek <br/><span class="text-primary">your next insight?</span></h2>
+<p class="text-on-surface-variant text-xl mb-12 max-w-xl">
+                The flow never stops. Join thousands of users who start their day with a moment of AdviceFlow.
+            </p>
+<button class="bg-primary-container text-on-primary font-headline font-extrabold text-xl px-12 py-6 rounded-full hover:scale-105 transition-transform duration-300 shadow-[0_0_30px_rgba(189,157,255,0.3)] group flex items-center gap-4">
+                Get Started
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</section>
+</main>
+<!-- SideNavBar (Hidden on desktop as per JSON docked logic, but structured for responsiveness) -->
+<aside class="bg-[#091328] flex-col gap-8 p-8 fixed left-0 top-24 h-full w-64 hidden lg:flex border-r border-outline-variant/10">
+<div class="mb-4">
+<h4 class="font-headline text-xs font-bold uppercase tracking-widest text-primary/50 mb-1">Insights</h4>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">The Digital Obsidian</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 font-inter text-sm font-medium text-[#a3aac4] px-4 py-3 hover:bg-[#192540] rounded-full transition-colors ease-out-quint" href="#">
+<span class="material-symbols-outlined" data-icon="lightbulb">lightbulb</span>
+                Daily Wisdom
+            </a>
+<a class="flex items-center gap-4 font-inter text-sm font-medium text-[#a3aac4] px-4 py-3 hover:bg-[#192540] rounded-full transition-colors ease-out-quint" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+                Trending Advice
+            </a>
+</nav>
+</aside>
+<!-- Footer -->
+<footer class="bg-transparent full-width py-20 mt-auto flex flex-col items-center gap-4 w-full border-t border-[#40485d]/15">
+<div class="flex gap-8 mb-4">
+<a class="font-inter text-xs text-[#a3aac4] hover:text-[#dee5ff] transition-colors ease-out" href="#">Terms</a>
+<a class="font-inter text-xs text-[#a3aac4] hover:text-[#dee5ff] transition-colors ease-out" href="#">Privacy</a>
+<a class="font-inter text-xs text-[#34b5fa] transition-colors ease-out" href="#">API Attribution</a>
+</div>
+<p class="font-inter text-xs text-[#a3aac4] opacity-60">
+            © 2024 AdviceFlow. Powered by Advice Slip API.
+        </p>
+</footer>
+</body></html>

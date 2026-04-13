@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings - AdviceFlow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#a67aff",
+                        "tertiary-container": "#d6b2fc",
+                        "on-error": "#490013",
+                        "primary": "#bd9dff",
+                        "on-primary-container": "#2e006c",
+                        "on-primary-fixed": "#000000",
+                        "surface-container-highest": "#192540",
+                        "error": "#ff6e84",
+                        "on-secondary-fixed": "#003853",
+                        "surface-container-high": "#141f38",
+                        "secondary-fixed-dim": "#81ccff",
+                        "tertiary-fixed": "#d6b2fc",
+                        "on-tertiary-fixed": "#361757",
+                        "surface-container-low": "#091328",
+                        "surface-container": "#0f1930",
+                        "on-background": "#dee5ff",
+                        "on-surface-variant": "#a3aac4",
+                        "surface-container-lowest": "#000000",
+                        "primary-container": "#b28cff",
+                        "secondary-dim": "#17a8ec",
+                        "on-primary": "#3c0089",
+                        "on-secondary": "#003047",
+                        "on-error-container": "#ffb2b9",
+                        "tertiary": "#e1c3ff",
+                        "inverse-primary": "#742fe5",
+                        "on-tertiary-fixed-variant": "#553777",
+                        "background": "#060e20",
+                        "on-tertiary-container": "#4c2e6d",
+                        "secondary-fixed": "#a4d8ff",
+                        "on-surface": "#dee5ff",
+                        "surface-bright": "#1f2b49",
+                        "on-secondary-fixed-variant": "#00567c",
+                        "on-primary-fixed-variant": "#390083",
+                        "surface-dim": "#060e20",
+                        "error-dim": "#d73357",
+                        "surface-tint": "#bd9dff",
+                        "inverse-surface": "#faf8ff",
+                        "tertiary-dim": "#c8a5ed",
+                        "surface-variant": "#192540",
+                        "on-secondary-container": "#f3f8ff",
+                        "outline-variant": "#40485d",
+                        "surface": "#060e20",
+                        "primary-fixed": "#b28cff",
+                        "outline": "#6d758c",
+                        "secondary-container": "#006591",
+                        "inverse-on-surface": "#4d556b",
+                        "secondary": "#34b5fa",
+                        "on-tertiary": "#553777",
+                        "primary-dim": "#8a4cfc",
+                        "error-container": "#a70138",
+                        "tertiary-fixed-dim": "#c8a5ed"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #060e20;
+            color: #dee5ff;
+        }
+        .ease-out-quint {
+            transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary/30 min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#0f1930]/60 backdrop-blur-3xl docked full-width top-0 sticky z-50 shadow-[0_0_40px_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center w-full px-12 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#dee5ff] font-manrope">AdviceFlow</div>
+<nav class="hidden md:flex items-center gap-8 font-manrope tracking-tight text-sm uppercase">
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors hover:scale-[1.02] duration-300 ease-out-quint" href="#">Home</a>
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors hover:scale-[1.02] duration-300 ease-out-quint" href="#">Search</a>
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors hover:scale-[1.02] duration-300 ease-out-quint" href="#">Favorites</a>
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors hover:scale-[1.02] duration-300 ease-out-quint" href="#">About</a>
+<a class="text-[#bd9dff] border-b-2 border-[#bd9dff] pb-1 hover:scale-[1.02] duration-300 ease-out-quint" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-[#a3aac4] hover:text-[#dee5ff] transition-transform active:scale-95 duration-200">notifications</button>
+<button class="material-symbols-outlined text-[#a3aac4] hover:text-[#dee5ff] transition-transform active:scale-95 duration-200">account_circle</button>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-screen-2xl mx-auto px-12 py-16 flex gap-12">
+<!-- Side Navigation (Suppressed on settings sub-page as per context rules if needed, but keeping for Digital Obsidian aesthetic) -->
+<aside class="hidden lg:flex flex-col gap-8 w-64 shrink-0">
+<div class="p-4">
+<h2 class="font-headline font-bold text-xl text-on-surface tracking-tight">Insights</h2>
+<p class="text-on-surface-variant text-xs font-medium">The Digital Obsidian</p>
+</div>
+<nav class="flex flex-col gap-2 font-inter text-sm font-medium">
+<a class="flex items-center gap-4 text-[#a3aac4] px-4 py-3 hover:bg-[#192540] rounded-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">lightbulb</span>
+                    Daily Wisdom
+                </a>
+<a class="flex items-center gap-4 text-[#a3aac4] px-4 py-3 hover:bg-[#192540] rounded-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+                    Trending Advice
+                </a>
+</nav>
+<!-- Sync Indicator Card -->
+<div class="mt-auto bg-surface-container p-6 rounded-lg border border-outline-variant/15">
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant">Cloud Sync</span>
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_#34b5fa]"></span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg">sync</span>
+<span class="text-xs text-on-surface">Synced with LocalStorage</span>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-2">Last updated: Just now</p>
+</div>
+</aside>
+<!-- Settings Canvas -->
+<section class="flex-grow">
+<div class="mb-12">
+<h1 class="font-headline text-5xl font-extrabold tracking-tight text-on-surface mb-2">Settings</h1>
+<p class="text-on-surface-variant text-lg">Personalize your wisdom delivery experience.</p>
+</div>
+<!-- Bento Grid Layout for Settings -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Appearance Card -->
+<div class="lg:col-span-2 bg-surface-container/70 backdrop-blur-3xl p-8 rounded-xl border border-outline-variant/15 flex flex-col justify-between min-h-[280px] hover:bg-surface-bright transition-colors duration-500 ease-out-quint">
+<div>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">palette</span>
+<h3 class="font-headline text-xl font-bold">Appearance</h3>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-medium text-on-surface">Dark Mode</p>
+<p class="text-xs text-on-surface-variant">Embrace the Digital Obsidian aesthetic</p>
+</div>
+<button class="w-12 h-6 rounded-full bg-primary relative flex items-center px-1 transition-all">
+<div class="w-4 h-4 rounded-full bg-on-primary-container ml-auto"></div>
+</button>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="font-medium text-on-surface">Reduced Motion</p>
+<p class="text-xs text-on-surface-variant">Minimize UI transitions and effects</p>
+</div>
+<button class="w-12 h-6 rounded-full bg-surface-container-highest relative flex items-center px-1 transition-all">
+<div class="w-4 h-4 rounded-full bg-outline"></div>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-outline-variant/10 text-xs text-on-surface-variant italic">
+                        Preferences are saved automatically to your browser.
+                    </div>
+</div>
+<!-- Identity Card -->
+<div class="bg-surface-container/70 backdrop-blur-3xl p-8 rounded-xl border border-outline-variant/15 hover:bg-surface-bright transition-colors duration-500 ease-out-quint">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+<h3 class="font-headline text-xl font-bold">Account</h3>
+</div>
+<div class="flex flex-col items-center text-center py-4">
+<div class="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-secondary p-1 mb-4">
+<img class="w-full h-full rounded-full object-cover" data-alt="minimalist abstract 3d avatar of a user with glowing violet edges on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATXBIVwkQerL2Iot5kC_E1lbQ8OFGCJeGmeCeuvfojsDF5uLVEfCDvjNSMskZN0wcX5cPmGMvpDC3J4GyEHpeHW7z_HV4a4T0mrDmZzjiAucfXwL4G-xIHb7c844c8gt4JSgWWxlxLMohlfcTX87oLk_nOKi7tPo7AUW-QEgUk38K2dZYsNnvDbKtvSI83WJRigclXLcEyHaEyrCe792g5oJsdJcpVy8eo2gZmBvGHb-VJN1dKpLGhruuJW1Z7C532-f6dX4w5o80"/>
+</div>
+<p class="font-bold text-on-surface">Anonymous Seeker</p>
+<p class="text-xs text-on-surface-variant mb-6">Guest Session</p>
+<button class="w-full py-2 rounded-full border border-outline-variant/30 text-xs font-bold hover:bg-on-surface hover:text-surface transition-all duration-300">UPGRADE TO PRO</button>
+</div>
+</div>
+<!-- Storage & Data (Bento Wide) -->
+<div class="lg:col-span-3 bg-surface-container/70 backdrop-blur-3xl p-8 rounded-xl border border-outline-variant/15 hover:bg-surface-bright transition-colors duration-500 ease-out-quint">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-tertiary">database</span>
+<h3 class="font-headline text-xl font-bold">Data Management</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="flex flex-col justify-between">
+<div>
+<h4 class="text-sm font-bold text-on-surface mb-2">History &amp; Cache</h4>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">AdviceFlow stores your search queries and wisdom history locally to provide a faster, offline-capable experience.</p>
+</div>
+<div class="flex gap-4">
+<button class="flex-1 px-6 py-3 rounded-full bg-surface-container-highest text-on-surface text-xs font-bold hover:bg-error/10 hover:text-error transition-all active:scale-[0.98]">
+                                    Clear Search History
+                                </button>
+<button class="flex-1 px-6 py-3 rounded-full border border-outline-variant/30 text-on-surface text-xs font-bold hover:bg-on-surface hover:text-surface transition-all active:scale-[0.98]">
+                                    Export Data
+                                </button>
+</div>
+</div>
+<div class="flex flex-col justify-between p-6 bg-surface-container-lowest/40 rounded-lg border border-outline-variant/5">
+<div>
+<h4 class="text-sm font-bold text-on-surface mb-2">Factory Reset</h4>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Reset all app preferences, theme settings, and motion triggers to their original obsidian state.</p>
+</div>
+<button class="w-full px-6 py-4 rounded-full bg-error text-on-error text-xs font-extrabold uppercase tracking-widest shadow-[0_0_20px_rgba(255,110,132,0.2)] hover:shadow-[0_0_30px_rgba(255,110,132,0.4)] transition-all active:scale-[0.95]">
+                                Reset App Preferences
+                            </button>
+</div>
+</div>
+</div>
+<!-- API Attribution Glass Card -->
+<div class="lg:col-span-1 bg-surface-container/70 backdrop-blur-3xl p-8 rounded-xl border border-outline-variant/15 flex flex-col gap-4">
+<div class="text-[10px] font-bold text-secondary uppercase tracking-[0.2em]">Source</div>
+<h4 class="font-headline text-lg font-bold">Advice Slip API</h4>
+<p class="text-xs text-on-surface-variant leading-loose">The digital marrow of AdviceFlow is powered by the open-source Advice Slip JSON API. All wisdom is generated programmatically.</p>
+<a class="text-secondary text-xs font-bold flex items-center gap-2 group" href="#">
+                        API Documentation
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- System Health -->
+<div class="lg:col-span-2 bg-gradient-to-br from-surface-container to-surface-container-high p-8 rounded-xl border border-outline-variant/15 flex items-center justify-between overflow-hidden relative">
+<div class="relative z-10">
+<h4 class="font-headline text-lg font-bold mb-2">System Status</h4>
+<div class="flex items-center gap-4 text-xs">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-400"></span>
+<span class="text-on-surface">API Online</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-400"></span>
+<span class="text-on-surface">CDN Active</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-on-surface">v2.4.0-obsidian</span>
+</div>
+</div>
+</div>
+<div class="absolute right-0 top-0 bottom-0 w-1/3 opacity-20 pointer-events-none">
+<div class="h-full w-full bg-repeat-x" style="background-image: linear-gradient(90deg, #bd9dff 1px, transparent 1px); background-size: 20px 100%;"></div>
+</div>
+<span class="material-symbols-outlined text-6xl text-primary/10 absolute -right-4 -bottom-4">hub</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-transparent full-width py-20 mt-auto border-t border-[#40485d]/15">
+<div class="flex flex-col items-center gap-4 w-full px-12 max-w-screen-2xl mx-auto">
+<div class="flex gap-8 mb-4">
+<a class="font-inter text-xs text-[#a3aac4] hover:text-[#dee5ff] transition-colors" href="#">Terms</a>
+<a class="font-inter text-xs text-[#a3aac4] hover:text-[#dee5ff] transition-colors" href="#">Privacy</a>
+<a class="font-inter text-xs text-[#a3aac4] hover:text-[#dee5ff] transition-colors" href="#">API Attribution</a>
+</div>
+<div class="text-[#34b5fa] font-inter text-xs">
+                © 2024 AdviceFlow. Powered by Advice Slip API.
+            </div>
+</div>
+</footer>
+<!-- Mobile Navigation Shell -->
+<nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#192540]/80 backdrop-blur-xl rounded-full px-8 py-4 flex gap-10 items-center z-50 border border-outline-variant/10 shadow-2xl">
+<a class="material-symbols-outlined text-[#a3aac4]" href="#">home</a>
+<a class="material-symbols-outlined text-[#a3aac4]" href="#">search</a>
+<a class="material-symbols-outlined text-[#bd9dff]" href="#" style="font-variation-settings: 'FILL' 1;">settings</a>
+</nav>
+</body></html>

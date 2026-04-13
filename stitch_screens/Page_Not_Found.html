@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>404 - AdviceFlow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#a67aff",
+                        "tertiary-container": "#d6b2fc",
+                        "on-error": "#490013",
+                        "primary": "#bd9dff",
+                        "on-primary-container": "#2e006c",
+                        "on-primary-fixed": "#000000",
+                        "surface-container-highest": "#192540",
+                        "error": "#ff6e84",
+                        "on-secondary-fixed": "#003853",
+                        "surface-container-high": "#141f38",
+                        "secondary-fixed-dim": "#81ccff",
+                        "tertiary-fixed": "#d6b2fc",
+                        "on-tertiary-fixed": "#361757",
+                        "surface-container-low": "#091328",
+                        "surface-container": "#0f1930",
+                        "on-background": "#dee5ff",
+                        "on-surface-variant": "#a3aac4",
+                        "surface-container-lowest": "#000000",
+                        "primary-container": "#b28cff",
+                        "secondary-dim": "#17a8ec",
+                        "on-primary": "#3c0089",
+                        "on-secondary": "#003047",
+                        "on-error-container": "#ffb2b9",
+                        "tertiary": "#e1c3ff",
+                        "inverse-primary": "#742fe5",
+                        "on-tertiary-fixed-variant": "#553777",
+                        "background": "#060e20",
+                        "on-tertiary-container": "#4c2e6d",
+                        "secondary-fixed": "#a4d8ff",
+                        "on-surface": "#dee5ff",
+                        "surface-bright": "#1f2b49",
+                        "on-secondary-fixed-variant": "#00567c",
+                        "on-primary-fixed-variant": "#390083",
+                        "surface-dim": "#060e20",
+                        "error-dim": "#d73357",
+                        "surface-tint": "#bd9dff",
+                        "inverse-surface": "#faf8ff",
+                        "tertiary-dim": "#c8a5ed",
+                        "surface-variant": "#192540",
+                        "on-secondary-container": "#f3f8ff",
+                        "outline-variant": "#40485d",
+                        "surface": "#060e20",
+                        "primary-fixed": "#b28cff",
+                        "outline": "#6d758c",
+                        "secondary-container": "#006591",
+                        "inverse-on-surface": "#4d556b",
+                        "secondary": "#34b5fa",
+                        "on-tertiary": "#553777",
+                        "primary-dim": "#8a4cfc",
+                        "error-container": "#a70138",
+                        "tertiary-fixed-dim": "#c8a5ed"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-mesh {
+            background-image: 
+                radial-gradient(at 10% 20%, rgba(189, 157, 255, 0.05) 0px, transparent 50%),
+                radial-gradient(at 90% 80%, rgba(52, 181, 250, 0.05) 0px, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30 min-h-screen flex flex-col overflow-x-hidden">
+<!-- Header Suppression: Since 404 is a task-focused "dead end", global nav is suppressed per instructions. Only branding remains. -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-12 py-8 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#dee5ff] font-headline uppercase">AdviceFlow</div>
+</header>
+<main class="flex-grow flex items-center justify-center relative px-6 py-24 bg-mesh">
+<!-- Floating Particles Background Decor -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden">
+<div class="absolute top-1/4 left-1/4 w-1 h-1 bg-primary rounded-full blur-[1px] opacity-40"></div>
+<div class="absolute top-1/3 right-1/3 w-2 h-2 bg-secondary rounded-full blur-[2px] opacity-20"></div>
+<div class="absolute bottom-1/4 right-1/4 w-1.5 h-1.5 bg-primary rounded-full blur-[1px] opacity-30"></div>
+<div class="absolute top-1/2 left-10 w-1 h-1 bg-tertiary rounded-full blur-[1px] opacity-40"></div>
+<div class="absolute bottom-20 left-1/2 w-2 h-2 bg-secondary rounded-full blur-[3px] opacity-10"></div>
+</div>
+<section class="relative z-10 w-full max-w-4xl flex flex-col items-center">
+<!-- Glass Card Container -->
+<div class="bg-surface-container/60 backdrop-blur-3xl rounded-xl p-12 md:p-20 text-center border border-outline-variant/10 shadow-[0_0_80px_rgba(0,0,0,0.5)] flex flex-col items-center">
+<!-- Hero Image: Premium Empty State (Lost Astronaut in Obsidian Void) -->
+<div class="relative w-64 h-64 md:w-80 md:h-80 mb-12">
+<img alt="Lost Astronaut in deep space" class="w-full h-full object-cover rounded-full grayscale mix-blend-screen opacity-80" data-alt="Cinematic wide shot of a lone astronaut floating in a dark volcanic obsidian void with ethereal purple and blue light leaks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTKC4NrSnaXHtZ9lnzLNJvd5oR6PZ2rSDgwTJlk4LsCrGfvED5mPZngwZ8gFbMXZL-SkzMsP9M8_lamH6wIMeWfH2kJyDvW8F5ukxugHQHwgOCZyiUqlS3tL6dpdpGU6LHew87SxkOCyzFh6SYcyZDvIFyIZW94Hmakpo1U9LIgQNZYBrcSNBgajnJtBsfyqGfWe2xbk2ImL2p6ChwVvKKgDaqYS_UH0ick2wOZHJADT-cm7K6GGlrxiSrVH1uATigTILyHO4FYjU"/>
+<!-- Glowing 404 Overlay -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="text-8xl md:text-9xl font-black font-headline tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-primary to-primary-dim/20 drop-shadow-[0_0_20px_rgba(189,157,255,0.4)]">
+                            404
+                        </span>
+</div>
+</div>
+<!-- Messaging -->
+<div class="max-w-lg">
+<h1 class="text-3xl md:text-5xl font-extrabold font-headline tracking-tight text-on-surface mb-6 leading-tight">
+                        Oops! This piece of wisdom is missing from the flow.
+                    </h1>
+<p class="text-lg md:text-xl text-on-surface-variant font-medium leading-relaxed mb-12">
+                        Even the deepest streams sometimes hit a dry patch. Let's navigate you back to the current of insights.
+                    </p>
+</div>
+<!-- Call to Action -->
+<div class="flex flex-col sm:flex-row gap-6 items-center">
+<a class="group bg-primary-container text-on-primary-fixed px-10 py-5 rounded-full font-bold text-lg flex items-center gap-3 transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_0_30px_rgba(189,157,255,0.3)]" href="/">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+                        Return Home
+                    </a>
+<button class="px-10 py-5 rounded-full border border-outline-variant/15 text-on-surface font-semibold text-lg flex items-center gap-3 transition-all duration-300 hover:bg-surface-container-highest hover:border-outline-variant/40">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+                        Search Archive
+                    </button>
+</div>
+</div>
+<!-- Hint Section (Asymmetric Editorial Layout) -->
+<div class="mt-16 w-full flex flex-col md:flex-row items-start gap-12 text-left opacity-60">
+<div class="md:w-1/3">
+<h3 class="text-xs uppercase tracking-[0.2em] font-bold text-secondary mb-4">Common Channels</h3>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="#">Daily Wisdom</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="#">Trending Flows</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="#">Archived Advice</a></li>
+</ul>
+</div>
+<div class="md:w-2/3 border-l border-outline-variant/10 pl-8">
+<p class="text-sm italic text-on-surface-variant leading-relaxed">
+                        "The man who asks a question is a fool for a minute, the man who does not ask is a fool for life. But the man who finds a 404 is simply on the wrong path."
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col items-center gap-4 w-full border-t border-[#40485d]/15 py-20 mt-auto">
+<div class="flex gap-8 mb-4">
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors font-inter text-xs" href="#">Terms</a>
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors font-inter text-xs" href="#">Privacy</a>
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors font-inter text-xs" href="#">API Attribution</a>
+</div>
+<p class="font-inter text-xs text-[#a3aac4]">© 2024 AdviceFlow. Powered by Advice Slip API.</p>
+</footer>
+</body></html>

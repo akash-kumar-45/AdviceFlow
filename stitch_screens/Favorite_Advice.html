@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary-fixed-dim": "#a67aff",
+                "tertiary-container": "#d6b2fc",
+                "on-error": "#490013",
+                "primary": "#bd9dff",
+                "on-primary-container": "#2e006c",
+                "on-primary-fixed": "#000000",
+                "surface-container-highest": "#192540",
+                "error": "#ff6e84",
+                "on-secondary-fixed": "#003853",
+                "surface-container-high": "#141f38",
+                "secondary-fixed-dim": "#81ccff",
+                "tertiary-fixed": "#d6b2fc",
+                "on-tertiary-fixed": "#361757",
+                "surface-container-low": "#091328",
+                "surface-container": "#0f1930",
+                "on-background": "#dee5ff",
+                "on-surface-variant": "#a3aac4",
+                "surface-container-lowest": "#000000",
+                "primary-container": "#b28cff",
+                "secondary-dim": "#17a8ec",
+                "on-primary": "#3c0089",
+                "on-secondary": "#003047",
+                "on-error-container": "#ffb2b9",
+                "tertiary": "#e1c3ff",
+                "inverse-primary": "#742fe5",
+                "on-tertiary-fixed-variant": "#553777",
+                "background": "#060e20",
+                "on-tertiary-container": "#4c2e6d",
+                "secondary-fixed": "#a4d8ff",
+                "on-surface": "#dee5ff",
+                "surface-bright": "#1f2b49",
+                "on-secondary-fixed-variant": "#00567c",
+                "on-primary-fixed-variant": "#390083",
+                "surface-dim": "#060e20",
+                "error-dim": "#d73357",
+                "surface-tint": "#bd9dff",
+                "inverse-surface": "#faf8ff",
+                "tertiary-dim": "#c8a5ed",
+                "surface-variant": "#192540",
+                "on-secondary-container": "#f3f8ff",
+                "outline-variant": "#40485d",
+                "surface": "#060e20",
+                "primary-fixed": "#b28cff",
+                "outline": "#6d758c",
+                "secondary-container": "#006591",
+                "inverse-on-surface": "#4d556b",
+                "secondary": "#34b5fa",
+                "on-tertiary": "#553777",
+                "primary-dim": "#8a4cfc",
+                "error-container": "#a70138",
+                "tertiary-fixed-dim": "#c8a5ed"
+            },
+            "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .ease-out-quint {
+        transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      body {
+        background-color: #060e20;
+        color: #dee5ff;
+        font-family: 'Inter', sans-serif;
+      }
+      .glass-card {
+        background: rgba(15, 25, 48, 0.6);
+        backdrop-filter: blur(24px);
+      }
+      .ghost-border {
+        outline: 1px solid rgba(64, 72, 93, 0.15);
+      }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<nav class="bg-[#0f1930]/60 backdrop-blur-3xl docked full-width top-0 sticky z-50 shadow-[0_0_40px_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center w-full px-12 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#dee5ff] font-manrope">AdviceFlow</div>
+<div class="hidden md:flex items-center gap-8 font-manrope tracking-tight text-sm uppercase">
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors duration-300 ease-out-quint" href="#">Home</a>
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors duration-300 ease-out-quint" href="#">Search</a>
+<a class="text-[#bd9dff] border-b-2 border-[#bd9dff] pb-1" href="#">Favorites</a>
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors duration-300 ease-out-quint" href="#">About</a>
+<a class="text-[#a3aac4] hover:text-[#dee5ff] transition-colors duration-300 ease-out-quint" href="#">Settings</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#bd9dff] hover:scale-[1.02] duration-300 ease-out-quint active:scale-95 transition-transform">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-[#bd9dff] hover:scale-[1.02] duration-300 ease-out-quint active:scale-95 transition-transform">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="flex-grow max-w-7xl mx-auto px-6 md:px-12 py-16 w-full">
+<!-- Page Header & Actions -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+<div class="space-y-2">
+<span class="text-primary font-bold tracking-widest text-xs uppercase">Curated Wisdom</span>
+<h1 class="text-5xl md:text-6xl font-headline font-extrabold tracking-tighter text-on-surface">Your Favorites</h1>
+<p class="text-on-surface-variant max-w-lg text-lg">A personal sanctuary for the insights that resonated most. Reflect, revisit, and evolve.</p>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 px-6 py-3 rounded-full ghost-border text-on-surface hover:bg-surface-bright transition-all duration-300 ease-out-quint active:scale-95">
+<span class="material-symbols-outlined text-sm">delete_sweep</span>
+<span class="font-medium text-sm">Clear All</span>
+</button>
+</div>
+</header>
+<!-- Favorites Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Advice Card 1 -->
+<div class="glass-card ghost-border rounded-xl p-8 flex flex-col justify-between min-h-[320px] group hover:bg-surface-bright transition-all duration-500 ease-out-quint relative overflow-hidden">
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+<div>
+<div class="flex justify-between items-start mb-6">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<span class="text-[10px] uppercase tracking-widest text-outline font-bold">Ref. #842</span>
+</div>
+<blockquote class="text-xl font-headline font-semibold text-on-surface leading-tight mb-4">
+                        "Your time is limited, so don't waste it living someone else's life."
+                    </blockquote>
+</div>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/10">
+<button class="text-on-surface-variant hover:text-error transition-colors flex items-center gap-2 text-sm group/btn">
+<span class="material-symbols-outlined text-lg">heart_broken</span>
+<span>Remove</span>
+</button>
+<button class="bg-primary text-on-primary-container px-5 py-2 rounded-full text-xs font-bold hover:scale-105 transition-transform active:scale-95 shadow-[0_0_15px_rgba(189,157,255,0.2)]">
+                        Open Detail
+                    </button>
+</div>
+</div>
+<!-- Advice Card 2 -->
+<div class="glass-card ghost-border rounded-xl p-8 flex flex-col justify-between min-h-[320px] group hover:bg-surface-bright transition-all duration-500 ease-out-quint relative overflow-hidden">
+<div class="absolute -bottom-12 -left-12 w-32 h-32 bg-secondary/5 rounded-full blur-3xl group-hover:bg-secondary/10 transition-colors"></div>
+<div>
+<div class="flex justify-between items-start mb-6">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<span class="text-[10px] uppercase tracking-widest text-outline font-bold">Ref. #119</span>
+</div>
+<blockquote class="text-xl font-headline font-semibold text-on-surface leading-tight mb-4">
+                        "If you tell the truth, you don't have to remember anything."
+                    </blockquote>
+</div>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/10">
+<button class="text-on-surface-variant hover:text-error transition-colors flex items-center gap-2 text-sm group/btn">
+<span class="material-symbols-outlined text-lg">heart_broken</span>
+<span>Remove</span>
+</button>
+<button class="bg-primary text-on-primary-container px-5 py-2 rounded-full text-xs font-bold hover:scale-105 transition-transform active:scale-95 shadow-[0_0_15px_rgba(189,157,255,0.2)]">
+                        Open Detail
+                    </button>
+</div>
+</div>
+<!-- Advice Card 3 -->
+<div class="glass-card ghost-border rounded-xl p-8 flex flex-col justify-between min-h-[320px] group hover:bg-surface-bright transition-all duration-500 ease-out-quint relative overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-tertiary/5 rounded-full blur-[80px]"></div>
+<div>
+<div class="flex justify-between items-start mb-6">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<span class="text-[10px] uppercase tracking-widest text-outline font-bold">Ref. #302</span>
+</div>
+<blockquote class="text-xl font-headline font-semibold text-on-surface leading-tight mb-4">
+                        "The best way to predict your future is to create it."
+                    </blockquote>
+</div>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/10">
+<button class="text-on-surface-variant hover:text-error transition-colors flex items-center gap-2 text-sm group/btn">
+<span class="material-symbols-outlined text-lg">heart_broken</span>
+<span>Remove</span>
+</button>
+<button class="bg-primary text-on-primary-container px-5 py-2 rounded-full text-xs font-bold hover:scale-105 transition-transform active:scale-95 shadow-[0_0_15px_rgba(189,157,255,0.2)]">
+                        Open Detail
+                    </button>
+</div>
+</div>
+</div>
+<!-- Empty State (Hidden by default, shown via logic in a real app) -->
+<div class="hidden flex-col items-center justify-center py-32 text-center">
+<div class="w-24 h-24 rounded-full bg-surface-container flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-4xl text-outline">folder_off</span>
+</div>
+<h3 class="text-3xl font-headline font-bold text-on-surface mb-2">No favorites yet.</h3>
+<p class="text-on-surface-variant mb-10 max-w-md">Start exploring insights and save the ones that spark inspiration to see them here.</p>
+<button class="bg-primary text-on-primary-container px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform active:scale-95 shadow-lg flex items-center gap-3">
+<span class="material-symbols-outlined">explore</span>
+                Back to Search
+            </button>
+</div>
+</main>
+<!-- Side Navigation (Web Only Desktop Layout Anchor) -->
+<aside class="bg-[#091328] fixed left-0 top-24 flex-col gap-8 p-8 h-full w-64 hidden lg:flex font-inter text-sm font-medium tonal-shift contrast-bg flat-tonal">
+<div class="flex flex-col gap-4">
+<div class="mb-4">
+<h4 class="text-[10px] uppercase tracking-[0.2em] text-outline font-black px-4">Insights</h4>
+<p class="text-[10px] text-primary/60 px-4">The Digital Obsidian</p>
+</div>
+<a class="flex items-center gap-4 text-[#a3aac4] px-4 py-3 hover:bg-[#192540] rounded-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">lightbulb</span>
+                Daily Wisdom
+            </a>
+<a class="flex items-center gap-4 text-[#a3aac4] px-4 py-3 hover:bg-[#192540] rounded-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+                Trending Advice
+            </a>
+</div>
+</aside>
+<!-- Footer -->
+<footer class="flex flex-col items-center gap-4 w-full border-t border-[#40485d]/15 bg-transparent full-width py-20 mt-auto">
+<div class="flex flex-wrap justify-center gap-8 text-[#a3aac4] text-xs font-inter mb-4">
+<a class="hover:text-[#dee5ff] transition-colors ease-out" href="#">Terms</a>
+<a class="hover:text-[#dee5ff] transition-colors ease-out" href="#">Privacy</a>
+<a class="hover:text-[#dee5ff] transition-colors ease-out" href="#">API Attribution</a>
+</div>
+<div class="font-inter text-xs text-[#a3aac4]">
+            © 2024 AdviceFlow. Powered by Advice Slip API.
+        </div>
+</footer>
+<!-- Image for decorative context (Hidden but present for asset logic) -->
+<div class="hidden">
+<img alt="Contextual Brand Visual" data-alt="Abstract fluid background with deep indigo and violet waves representing calm wisdom and digital obsidian aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDweaFet8-bDnLRLZzO-Nh9-D-P_wAUuSMpYxMvKzng6ZXUpAn7oaRBBTQRI-6859I9MDmEFC7vwdh1LvU76Tq4nJA_0XTW37cVsqQe1MhbWiJ4yBpkh4LUOax6ImaEJuoNaq0_zagOH1VfkGP5i0SgJjNoqFif_HDZ7OVrRt3Mufyuq7tpoBMDh0Z94vyscFQqHRL5Asxx0xjXil6mLnvPmbBMNu7rBmjk4N6JRZHkf1M1xvm0-3M3b25jmk1aMzug9QR5VyILN5Q"/>
+</div>
+</body></html>
