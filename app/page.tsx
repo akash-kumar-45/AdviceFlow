@@ -184,9 +184,6 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <button className="w-full mt-8 py-4 text-sm font-bold text-on-surface-variant hover:text-on-surface border border-outline-variant/20 rounded-full transition-all hover:bg-surface-container">
-                View All Insights
-              </button>
             </div>
             
             <div className="relative h-48 rounded-lg overflow-hidden group">
